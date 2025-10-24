@@ -57,7 +57,7 @@ namespace detection
     bool ifCountTime = false; // 是否计时
 
     // 指定识别的颜色
-    int detect_color = 1; // 0: 红色，1: 蓝色
+    int detect_color = 0; // 0: 红色，1: 蓝色
 
     // 当前帧的装甲板数据
     vector<ArmorData> armorsDatas; //

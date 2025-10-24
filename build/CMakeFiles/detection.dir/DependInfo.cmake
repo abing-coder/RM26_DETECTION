@@ -14,6 +14,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/ubuntu/桌面/RM26_Detect_Ling/detection/TrackerSource/lapjv.cpp" "CMakeFiles/detection.dir/TrackerSource/lapjv.cpp.o" "gcc" "CMakeFiles/detection.dir/TrackerSource/lapjv.cpp.o.d"
   "/home/ubuntu/桌面/RM26_Detect_Ling/detection/TrackerSource/utils.cpp" "CMakeFiles/detection.dir/TrackerSource/utils.cpp.o" "gcc" "CMakeFiles/detection.dir/TrackerSource/utils.cpp.o.d"
   "/home/ubuntu/桌面/RM26_Detect_Ling/detection/main.cpp" "CMakeFiles/detection.dir/main.cpp.o" "gcc" "CMakeFiles/detection.dir/main.cpp.o.d"
+  "/home/ubuntu/桌面/RM26_Detect_Ling/detection/src/armor.cpp" "CMakeFiles/detection.dir/src/armor.cpp.o" "gcc" "CMakeFiles/detection.dir/src/armor.cpp.o.d"
+  "/home/ubuntu/桌面/RM26_Detect_Ling/detection/src/test.cpp" "CMakeFiles/detection.dir/src/test.cpp.o" "gcc" "CMakeFiles/detection.dir/src/test.cpp.o.d"
   )
 
 # Targets to which this target links.

@@ -2,11 +2,16 @@
 #define __DETECTION_HPP__
 
 #include "detection.h"
-// #include "STrack.h"
+#include "STrack.h"
 #include <thread>    // std::this_thread
 #include <chrono>    // std::chrono::seconds
 #include <system_error>
 #include <pthread.h>
+#include "armor.hpp"
+
+// 声明 detect_lightbar 函数（根据实际参数类型进行调整）
+void detect_lightbar(const cv::Mat& binary_img, const cv::Mat& img);
+
 
 using namespace detection;
 
@@ -55,7 +60,7 @@ DetectionArmor::DetectionArmor(string& model_path, bool ifcountTime, string vide
 
     input_blob = Mat(640, 640, CV_32F, Scalar(0)); // 初始化输入blob
 
-    tracker = BYTETracker(10, 10); // 初始化BYTETracker
+    //tracker = BYTETracker(10, 10); // 初始化BYTETracker
 
     // armorsDatas = new ArmorData[20]; // 最多装20个装甲板
 }
@@ -76,13 +81,32 @@ void DetectionArmor::drawObject(Mat& image, const ArmorData& d)
 {
     // 绘制装甲板的边界框
     std::vector<Point> points = {d.p1, d.p2, d.p3, d.p4};
-    polylines(image, points, true, Scalar(0, 0, 255), 2);
-    cv::circle(image, d.p1, 5, Scalar(0, 255, 0), -1);
-    cv::circle(image, d.p2, 5, Scalar(0, 255, 0), -1);
-    cv::circle(image, d.p3, 5, Scalar(0, 255, 0), -1);
-    cv::circle(image, d.p4, 5, Scalar(0, 255, 0), -1);
-    // 绘制装甲板的中心点
-    cv::circle(image, d.center_point, 5, Scalar(255, 0, 0), -1);
+    // polylines(image, points, true, Scalar(0, 0, 255), 2);
+    // cv::circle(image, d.p1, 5, Scalar(0, 255, 0), -1);
+    // cv::circle(image, d.p2, 5, Scalar(0, 255, 0), -1);
+    // cv::circle(image, d.p3, 5, Scalar(0, 255, 0), -1);
+    // cv::circle(image, d.p4, 5, Scalar(0, 255, 0), -1);
+    // // 绘制装甲板的中心点
+    // cv::circle(image, d.center_point, 5, Scalar(255, 0, 0), -1);
+    // 计算ROI边界，确保不超出图像范围
+    int x1 = std::max(0, std::min(d.p1.x, d.p3.x) - 10);
+    int y1 = std::max(0, std::min(d.p1.y, d.p3.y) - 10);
+    int x2 = std::min(image.cols, std::max(d.p1.x, d.p3.x) + 10);
+    int y2 = std::min(image.rows, std::max(d.p1.y, d.p3.y) + 10);
+    
+    cv::Point lt = cv::Point(x1, y1);
+    cv::Point rb = cv::Point(x2, y2);
+    cv::Mat roi = image(cv::Rect(lt, rb));
+    cv::Mat processed_roi = process_img(roi);
+    detect_lightbar(processed_roi, roi);
+
+
+
+    cv::rectangle(image, lt, rb, Scalar(0, 255, 0), 2);
+
+
+
+
 
 
     // cv::rectangle(
@@ -122,7 +146,7 @@ void DetectionArmor::run()
 
         showImage();
 
-        if (cv::waitKey(60) == 27)
+        if (cv::waitKey(120) == 27)
         {
             isRunning = false; // 设置线程停止标志
             clearHeap();
@@ -165,8 +189,8 @@ void DetectionArmor::infer()
     ov::Shape output_shape = output.get_shape();
     cv::Mat output_buffer(output_shape[1], output_shape[2], CV_32F, output.data());
     
-    float conf_threshold = 0.75;  // 置信度阈值
-    float nms_threshold = 0.45;   // NMS重叠阈值
+    float conf_threshold = 0.6;   
+    float nms_threshold = 0.4;   
     
     // 存储临时结果
     std::vector<Rect> boxes;
@@ -348,7 +372,7 @@ void __TEST__ DetectionArmor::showImage()
         {
             drawObject(img, i); // 绘制检测结果
         }
-        drawTracks(img); // 绘制跟踪轨迹
+        //drawTracks(img); // 绘制跟踪轨迹
 
         cv::imshow("Detection Armor", img); // 显示图像
         // format_print_data_test();

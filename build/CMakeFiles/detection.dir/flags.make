@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/g++
 CXX_DEFINES = -DOV_THREAD=OV_THREAD_TBB -D_GLIBCXX_USE_CXX11_ABI=1
 
-CXX_INCLUDES = -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/./include -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/./TimeCounter -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/./TrackerHeader -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/./Eigen -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/include -isystem /home/ubuntu/l_openvino_toolkit_ubuntu22_2024.6.0.17404.4c0f47d2335_x86_64/runtime/include -isystem /usr/include/opencv4
+CXX_INCLUDES = -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/./include -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/./TimeCounter -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/./TrackerHeader -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/./Eigen -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/include -isystem /usr/include/opencv4 -isystem /opt/intel/l_openvino_toolkit_ubuntu22_2024.6.0.17404.4c0f47d2335_x86_64/runtime/include
 
 CXX_FLAGS = -g -Wno-error=deprecated-declarations -std=gnu++11
 

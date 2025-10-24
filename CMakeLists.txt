@@ -6,10 +6,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # set(OpenCV_DIR "/Users/Opencv/opencv_build")
 find_package(OpenCV REQUIRED)
 
-include_directories("/home/ubuntu/l_openvino_toolkit_ubuntu22_2024.6.0.17404.4c0f47d2335_x86_64/runtime/include")
-set(OpenVINO_DIR "/home/ubuntu/l_openvino_toolkit_ubuntu22_2024.6.0.17404.4c0f47d2335_x86_64/runtime/cmake")
 find_package(OpenVINO REQUIRED)
-link_directories("/home/ubuntu/l_openvino_toolkit_ubuntu22_2024.6.0.17404.4c0f47d2335_x86_64/runtime/lib/intel64") 
 
 
 # find_package(OpenCV REQUIRED COMPONENTS core dnn)
@@ -31,7 +28,8 @@ include_directories(./TrackerHeader)
 include_directories(./Eigen)
 
 file(GLOB_RECURSE SOURCES "TrackerSource/*.cpp")
-add_executable(${PROJECT_NAME} main.cpp ${SOURCES})
+file(GLOB_RECURSE ARMOR_SOURCES "src/*.cpp")
+add_executable(${PROJECT_NAME} main.cpp ${SOURCES} ${ARMOR_SOURCES})
 # message(${SOURCES})
 
 

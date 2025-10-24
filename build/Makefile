@@ -273,6 +273,54 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/detection.dir/build.make CMakeFiles/detection.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/armor.o: src/armor.cpp.o
+.PHONY : src/armor.o
+
+# target to build an object file
+src/armor.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/detection.dir/build.make CMakeFiles/detection.dir/src/armor.cpp.o
+.PHONY : src/armor.cpp.o
+
+src/armor.i: src/armor.cpp.i
+.PHONY : src/armor.i
+
+# target to preprocess a source file
+src/armor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/detection.dir/build.make CMakeFiles/detection.dir/src/armor.cpp.i
+.PHONY : src/armor.cpp.i
+
+src/armor.s: src/armor.cpp.s
+.PHONY : src/armor.s
+
+# target to generate assembly for a file
+src/armor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/detection.dir/build.make CMakeFiles/detection.dir/src/armor.cpp.s
+.PHONY : src/armor.cpp.s
+
+src/test.o: src/test.cpp.o
+.PHONY : src/test.o
+
+# target to build an object file
+src/test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/detection.dir/build.make CMakeFiles/detection.dir/src/test.cpp.o
+.PHONY : src/test.cpp.o
+
+src/test.i: src/test.cpp.i
+.PHONY : src/test.i
+
+# target to preprocess a source file
+src/test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/detection.dir/build.make CMakeFiles/detection.dir/src/test.cpp.i
+.PHONY : src/test.cpp.i
+
+src/test.s: src/test.cpp.s
+.PHONY : src/test.s
+
+# target to generate assembly for a file
+src/test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/detection.dir/build.make CMakeFiles/detection.dir/src/test.cpp.s
+.PHONY : src/test.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -300,6 +348,12 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... src/armor.o"
+	@echo "... src/armor.i"
+	@echo "... src/armor.s"
+	@echo "... src/test.o"
+	@echo "... src/test.i"
+	@echo "... src/test.s"
 .PHONY : help
 
 

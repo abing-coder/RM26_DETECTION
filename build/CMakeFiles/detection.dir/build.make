@@ -153,6 +153,34 @@ CMakeFiles/detection.dir/TrackerSource/utils.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/detection.dir/TrackerSource/utils.cpp.s"
 	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/桌面/RM26_Detect_Ling/detection/TrackerSource/utils.cpp -o CMakeFiles/detection.dir/TrackerSource/utils.cpp.s
 
+CMakeFiles/detection.dir/src/armor.cpp.o: CMakeFiles/detection.dir/flags.make
+CMakeFiles/detection.dir/src/armor.cpp.o: ../src/armor.cpp
+CMakeFiles/detection.dir/src/armor.cpp.o: CMakeFiles/detection.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/桌面/RM26_Detect_Ling/detection/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/detection.dir/src/armor.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/detection.dir/src/armor.cpp.o -MF CMakeFiles/detection.dir/src/armor.cpp.o.d -o CMakeFiles/detection.dir/src/armor.cpp.o -c /home/ubuntu/桌面/RM26_Detect_Ling/detection/src/armor.cpp
+
+CMakeFiles/detection.dir/src/armor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/detection.dir/src/armor.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/桌面/RM26_Detect_Ling/detection/src/armor.cpp > CMakeFiles/detection.dir/src/armor.cpp.i
+
+CMakeFiles/detection.dir/src/armor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/detection.dir/src/armor.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/桌面/RM26_Detect_Ling/detection/src/armor.cpp -o CMakeFiles/detection.dir/src/armor.cpp.s
+
+CMakeFiles/detection.dir/src/test.cpp.o: CMakeFiles/detection.dir/flags.make
+CMakeFiles/detection.dir/src/test.cpp.o: ../src/test.cpp
+CMakeFiles/detection.dir/src/test.cpp.o: CMakeFiles/detection.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/桌面/RM26_Detect_Ling/detection/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/detection.dir/src/test.cpp.o"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/detection.dir/src/test.cpp.o -MF CMakeFiles/detection.dir/src/test.cpp.o.d -o CMakeFiles/detection.dir/src/test.cpp.o -c /home/ubuntu/桌面/RM26_Detect_Ling/detection/src/test.cpp
+
+CMakeFiles/detection.dir/src/test.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/detection.dir/src/test.cpp.i"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/桌面/RM26_Detect_Ling/detection/src/test.cpp > CMakeFiles/detection.dir/src/test.cpp.i
+
+CMakeFiles/detection.dir/src/test.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/detection.dir/src/test.cpp.s"
+	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/桌面/RM26_Detect_Ling/detection/src/test.cpp -o CMakeFiles/detection.dir/src/test.cpp.s
+
 # Object files for target detection
 detection_OBJECTS = \
 "CMakeFiles/detection.dir/main.cpp.o" \
@@ -160,7 +188,9 @@ detection_OBJECTS = \
 "CMakeFiles/detection.dir/TrackerSource/STrack.cpp.o" \
 "CMakeFiles/detection.dir/TrackerSource/kalmanFilter.cpp.o" \
 "CMakeFiles/detection.dir/TrackerSource/lapjv.cpp.o" \
-"CMakeFiles/detection.dir/TrackerSource/utils.cpp.o"
+"CMakeFiles/detection.dir/TrackerSource/utils.cpp.o" \
+"CMakeFiles/detection.dir/src/armor.cpp.o" \
+"CMakeFiles/detection.dir/src/test.cpp.o"
 
 # External object files for target detection
 detection_EXTERNAL_OBJECTS =
@@ -171,6 +201,8 @@ detection: CMakeFiles/detection.dir/TrackerSource/STrack.cpp.o
 detection: CMakeFiles/detection.dir/TrackerSource/kalmanFilter.cpp.o
 detection: CMakeFiles/detection.dir/TrackerSource/lapjv.cpp.o
 detection: CMakeFiles/detection.dir/TrackerSource/utils.cpp.o
+detection: CMakeFiles/detection.dir/src/armor.cpp.o
+detection: CMakeFiles/detection.dir/src/test.cpp.o
 detection: CMakeFiles/detection.dir/build.make
 detection: /usr/lib/x86_64-linux-gnu/libopencv_stitching.so.4.5.4d
 detection: /usr/lib/x86_64-linux-gnu/libopencv_alphamat.so.4.5.4d
@@ -207,7 +239,7 @@ detection: /usr/lib/x86_64-linux-gnu/libopencv_viz.so.4.5.4d
 detection: /usr/lib/x86_64-linux-gnu/libopencv_wechat_qrcode.so.4.5.4d
 detection: /usr/lib/x86_64-linux-gnu/libopencv_xobjdetect.so.4.5.4d
 detection: /usr/lib/x86_64-linux-gnu/libopencv_xphoto.so.4.5.4d
-detection: /home/ubuntu/l_openvino_toolkit_ubuntu22_2024.6.0.17404.4c0f47d2335_x86_64/runtime/lib/intel64/libopenvino.so.2024.6.0
+detection: /opt/intel/l_openvino_toolkit_ubuntu22_2024.6.0.17404.4c0f47d2335_x86_64/runtime/lib/intel64/libopenvino.so.2024.6.0
 detection: /usr/lib/x86_64-linux-gnu/libopencv_highgui.so.4.5.4d
 detection: /usr/lib/x86_64-linux-gnu/libopencv_datasets.so.4.5.4d
 detection: /usr/lib/x86_64-linux-gnu/libopencv_plot.so.4.5.4d
@@ -228,7 +260,7 @@ detection: /usr/lib/x86_64-linux-gnu/libopencv_photo.so.4.5.4d
 detection: /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.4.5.4d
 detection: /usr/lib/x86_64-linux-gnu/libopencv_core.so.4.5.4d
 detection: CMakeFiles/detection.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/桌面/RM26_Detect_Ling/detection/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable detection"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/桌面/RM26_Detect_Ling/detection/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable detection"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/detection.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
