@@ -11,10 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/detection.dir/TrackerSource/utils.cpp.o.d"
   "CMakeFiles/detection.dir/main.cpp.o"
   "CMakeFiles/detection.dir/main.cpp.o.d"
-  "CMakeFiles/detection.dir/src/armor.cpp.o"
-  "CMakeFiles/detection.dir/src/armor.cpp.o.d"
-  "CMakeFiles/detection.dir/src/test.cpp.o"
-  "CMakeFiles/detection.dir/src/test.cpp.o.d"
+  "CMakeFiles/detection.dir/rv_auto_aim/src/detector.cpp.o"
+  "CMakeFiles/detection.dir/rv_auto_aim/src/detector.cpp.o.d"
   "detection"
   "detection.pdb"
 )

@@ -7,10 +7,8 @@
 #include <chrono>    // std::chrono::seconds
 #include <system_error>
 #include <pthread.h>
-#include "armor.hpp"
 
-// 声明 detect_lightbar 函数（根据实际参数类型进行调整）
-void detect_lightbar(const cv::Mat& binary_img, const cv::Mat& img);
+
 
 
 using namespace detection;
@@ -76,8 +74,10 @@ void DetectionArmor::clearHeap()
     cap.release();
     cv::destroyAllWindows();
 }
-
-void DetectionArmor::drawObject(Mat& image, const ArmorData& d)
+Detector::LightParams l_params; 
+Detector::ArmorParams a_params;
+Detector detector(130,0,l_params,a_params); 
+void DetectionArmor::drawObject(Mat& image, const ArmorData& d,cv::Mat mask)
 {
     // 绘制装甲板的边界框
     std::vector<Point> points = {d.p1, d.p2, d.p3, d.p4};
@@ -89,20 +89,38 @@ void DetectionArmor::drawObject(Mat& image, const ArmorData& d)
     // // 绘制装甲板的中心点
     // cv::circle(image, d.center_point, 5, Scalar(255, 0, 0), -1);
     // 计算ROI边界，确保不超出图像范围
-    int x1 = std::max(0, std::min(d.p1.x, d.p3.x) - 10);
-    int y1 = std::max(0, std::min(d.p1.y, d.p3.y) - 10);
-    int x2 = std::min(image.cols, std::max(d.p1.x, d.p3.x) + 10);
-    int y2 = std::min(image.rows, std::max(d.p1.y, d.p3.y) + 10);
+    //1   2
+    //4   3
     
-    cv::Point lt = cv::Point(x1, y1);
-    cv::Point rb = cv::Point(x2, y2);
-    cv::Mat roi = image(cv::Rect(lt, rb));
-    cv::Mat processed_roi = process_img(roi);
-    detect_lightbar(processed_roi, roi);
+    // int x1 = std::max(0, std::min(d.p1.x, d.p3.x) - 10);
+    // int y1 = std::max(0, std::min(d.p1.y, d.p3.y) - 10);
+    // int x2 = std::min(image.cols, std::max(d.p1.x, d.p3.x) + 10);
+    // int y2 = std::min(image.rows, std::max(d.p1.y, d.p3.y) + 10);
+
+    
+    
+    cv::Point lt = cv::Point(d.p1.x-20, d.p1.y-20);  // 左上角
+    cv::Point rb = cv::Point(d.p3.x+20, d.p3.y+20);  // 右下角
+    cv::Point lb = cv::Point(d.p2.x-20, d.p2.y+20);  // 左下角
+    cv::Point rt = cv::Point(d.p4.x+20, d.p4.y-20);  // 右上角
+    cv::polylines(image, std::vector<Point>{lt, rt, rb, lb}, true, Scalar(255, 0, 0), 2);
+    std::vector<cv::Point> roi_points = {lt, rt, rb, lb};
+   
+    cv::fillConvexPoly(mask, roi_points,Scalar(255,0,0));
+    Mat ROI;
+    cv::bitwise_and(image, image,ROI, mask);
+    cv::imshow("ROI", ROI);
+    // //cv::Mat roi = image(cv::Rect(lt, rb));
+    // cv::Mat processed_roi = process_img(ROI);
+    // //cv::imshow("processed_roi", processed_roi);
+    // detect_lightbar(processed_roi, image);
+    detector.detect(ROI);
+    detector.drawResults(image);
+
+    cv::imshow("Detection", image);
 
 
-
-    cv::rectangle(image, lt, rb, Scalar(0, 255, 0), 2);
+    // cv::rectangle(image, lt, rb, Scalar(0, 255, 0), 2);
 
 
 
@@ -190,7 +208,7 @@ void DetectionArmor::infer()
     cv::Mat output_buffer(output_shape[1], output_shape[2], CV_32F, output.data());
     
     float conf_threshold = 0.6;   
-    float nms_threshold = 0.4;   
+    float nms_threshold = 0.4;  
     
     // 存储临时结果
     std::vector<Rect> boxes;
@@ -292,23 +310,23 @@ void DetectionArmor::infer()
 
         armorsDatas.push_back(d);
 
-        // 创建对象用于跟踪器
-        Object dog;
-        dog.rect = cv::Rect_<float>(
-            boxes[indices[valid_index]].x,
-            boxes[indices[valid_index]].y,
+        // // 创建对象用于跟踪器
+        // Object dog;
+        // dog.rect = cv::Rect_<float>(
+        //     boxes[indices[valid_index]].x,
+        //     boxes[indices[valid_index]].y,
 
-            boxes[indices[valid_index]].width,
-            boxes[indices[valid_index]].height
-        );
-        dog.label = num_class[indices[valid_index]];  //从类别里面取
-        dog.prob = confidences[indices[valid_index]];
-        detection_objects.push_back(dog);
+        //     boxes[indices[valid_index]].width,
+        //     boxes[indices[valid_index]].height
+        // );
+        // dog.label = num_class[indices[valid_index]];  //从类别里面取
+        // dog.prob = confidences[indices[valid_index]];
+        // detection_objects.push_back(dog);
 
         
     }
 
-    tracks_objects = tracker.update(detection_objects);
+    // tracks_objects = tracker.update(detection_objects);
     detection_objects.clear();
 }
 
@@ -368,9 +386,12 @@ void __TEST__ DetectionArmor::showImage()
 {
     if (!img.empty()) 
     {
+        std::cout << getdata().size() << std::endl;
+        cv::Mat mask = Mat::zeros(img.size(), CV_8UC1);
         for (auto i : getdata()) 
         {
-            drawObject(img, i); // 绘制检测结果
+            
+            drawObject(img, i,mask); // 绘制检测结果
         }
         //drawTracks(img); // 绘制跟踪轨迹
 

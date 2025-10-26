@@ -1,42 +1,44 @@
 [
 {
-  "directory": "/home/ubuntu/桌面/RM26_Detect_Ling/detection/build",
-  "command": "/usr/bin/g++ -DOV_THREAD=OV_THREAD_TBB -D_GLIBCXX_USE_CXX11_ABI=1 -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/./include -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/./TimeCounter -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/./TrackerHeader -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/./Eigen -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/include -isystem /usr/include/opencv4 -isystem /opt/intel/l_openvino_toolkit_ubuntu22_2024.6.0.17404.4c0f47d2335_x86_64/runtime/include -g -Wno-error=deprecated-declarations -std=gnu++11 -o CMakeFiles/detection.dir/main.cpp.o -c /home/ubuntu/桌面/RM26_Detect_Ling/detection/main.cpp",
-  "file": "/home/ubuntu/桌面/RM26_Detect_Ling/detection/main.cpp"
+  "directory": "/Users/abing/detection/build",
+  "command": "/usr/bin/clang++ -DOV_THREAD=OV_THREAD_TBB -I/Users/abing/detection/./include -I/Users/abing/detection/./TimeCounter -I/Users/abing/detection/./TrackerHeader -I/Users/abing/detection/./Eigen -I/Users/abing/detection/rv_auto_aim/include -I/Users/abing/detection/include -isystem /opt/homebrew/Cellar/opencv/4.12.0_12/include/opencv4 -isystem /opt/homebrew/include -g -std=gnu++17 -arch arm64 -Wno-error=deprecated-declarations -o CMakeFiles/detection.dir/main.cpp.o -c /Users/abing/detection/main.cpp",
+  "file": "/Users/abing/detection/main.cpp",
+  "output": "CMakeFiles/detection.dir/main.cpp.o"
 },
 {
-  "directory": "/home/ubuntu/桌面/RM26_Detect_Ling/detection/build",
-  "command": "/usr/bin/g++ -DOV_THREAD=OV_THREAD_TBB -D_GLIBCXX_USE_CXX11_ABI=1 -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/./include -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/./TimeCounter -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/./TrackerHeader -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/./Eigen -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/include -isystem /usr/include/opencv4 -isystem /opt/intel/l_openvino_toolkit_ubuntu22_2024.6.0.17404.4c0f47d2335_x86_64/runtime/include -g -Wno-error=deprecated-declarations -std=gnu++11 -o CMakeFiles/detection.dir/TrackerSource/BYTETracker.cpp.o -c /home/ubuntu/桌面/RM26_Detect_Ling/detection/TrackerSource/BYTETracker.cpp",
-  "file": "/home/ubuntu/桌面/RM26_Detect_Ling/detection/TrackerSource/BYTETracker.cpp"
+  "directory": "/Users/abing/detection/build",
+  "command": "/usr/bin/clang++ -DOV_THREAD=OV_THREAD_TBB -I/Users/abing/detection/./include -I/Users/abing/detection/./TimeCounter -I/Users/abing/detection/./TrackerHeader -I/Users/abing/detection/./Eigen -I/Users/abing/detection/rv_auto_aim/include -I/Users/abing/detection/include -isystem /opt/homebrew/Cellar/opencv/4.12.0_12/include/opencv4 -isystem /opt/homebrew/include -g -std=gnu++17 -arch arm64 -Wno-error=deprecated-declarations -o CMakeFiles/detection.dir/TrackerSource/BYTETracker.cpp.o -c /Users/abing/detection/TrackerSource/BYTETracker.cpp",
+  "file": "/Users/abing/detection/TrackerSource/BYTETracker.cpp",
+  "output": "CMakeFiles/detection.dir/TrackerSource/BYTETracker.cpp.o"
 },
 {
-  "directory": "/home/ubuntu/桌面/RM26_Detect_Ling/detection/build",
-  "command": "/usr/bin/g++ -DOV_THREAD=OV_THREAD_TBB -D_GLIBCXX_USE_CXX11_ABI=1 -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/./include -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/./TimeCounter -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/./TrackerHeader -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/./Eigen -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/include -isystem /usr/include/opencv4 -isystem /opt/intel/l_openvino_toolkit_ubuntu22_2024.6.0.17404.4c0f47d2335_x86_64/runtime/include -g -Wno-error=deprecated-declarations -std=gnu++11 -o CMakeFiles/detection.dir/TrackerSource/STrack.cpp.o -c /home/ubuntu/桌面/RM26_Detect_Ling/detection/TrackerSource/STrack.cpp",
-  "file": "/home/ubuntu/桌面/RM26_Detect_Ling/detection/TrackerSource/STrack.cpp"
+  "directory": "/Users/abing/detection/build",
+  "command": "/usr/bin/clang++ -DOV_THREAD=OV_THREAD_TBB -I/Users/abing/detection/./include -I/Users/abing/detection/./TimeCounter -I/Users/abing/detection/./TrackerHeader -I/Users/abing/detection/./Eigen -I/Users/abing/detection/rv_auto_aim/include -I/Users/abing/detection/include -isystem /opt/homebrew/Cellar/opencv/4.12.0_12/include/opencv4 -isystem /opt/homebrew/include -g -std=gnu++17 -arch arm64 -Wno-error=deprecated-declarations -o CMakeFiles/detection.dir/TrackerSource/STrack.cpp.o -c /Users/abing/detection/TrackerSource/STrack.cpp",
+  "file": "/Users/abing/detection/TrackerSource/STrack.cpp",
+  "output": "CMakeFiles/detection.dir/TrackerSource/STrack.cpp.o"
 },
 {
-  "directory": "/home/ubuntu/桌面/RM26_Detect_Ling/detection/build",
-  "command": "/usr/bin/g++ -DOV_THREAD=OV_THREAD_TBB -D_GLIBCXX_USE_CXX11_ABI=1 -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/./include -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/./TimeCounter -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/./TrackerHeader -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/./Eigen -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/include -isystem /usr/include/opencv4 -isystem /opt/intel/l_openvino_toolkit_ubuntu22_2024.6.0.17404.4c0f47d2335_x86_64/runtime/include -g -Wno-error=deprecated-declarations -std=gnu++11 -o CMakeFiles/detection.dir/TrackerSource/kalmanFilter.cpp.o -c /home/ubuntu/桌面/RM26_Detect_Ling/detection/TrackerSource/kalmanFilter.cpp",
-  "file": "/home/ubuntu/桌面/RM26_Detect_Ling/detection/TrackerSource/kalmanFilter.cpp"
+  "directory": "/Users/abing/detection/build",
+  "command": "/usr/bin/clang++ -DOV_THREAD=OV_THREAD_TBB -I/Users/abing/detection/./include -I/Users/abing/detection/./TimeCounter -I/Users/abing/detection/./TrackerHeader -I/Users/abing/detection/./Eigen -I/Users/abing/detection/rv_auto_aim/include -I/Users/abing/detection/include -isystem /opt/homebrew/Cellar/opencv/4.12.0_12/include/opencv4 -isystem /opt/homebrew/include -g -std=gnu++17 -arch arm64 -Wno-error=deprecated-declarations -o CMakeFiles/detection.dir/TrackerSource/kalmanFilter.cpp.o -c /Users/abing/detection/TrackerSource/kalmanFilter.cpp",
+  "file": "/Users/abing/detection/TrackerSource/kalmanFilter.cpp",
+  "output": "CMakeFiles/detection.dir/TrackerSource/kalmanFilter.cpp.o"
 },
 {
-  "directory": "/home/ubuntu/桌面/RM26_Detect_Ling/detection/build",
-  "command": "/usr/bin/g++ -DOV_THREAD=OV_THREAD_TBB -D_GLIBCXX_USE_CXX11_ABI=1 -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/./include -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/./TimeCounter -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/./TrackerHeader -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/./Eigen -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/include -isystem /usr/include/opencv4 -isystem /opt/intel/l_openvino_toolkit_ubuntu22_2024.6.0.17404.4c0f47d2335_x86_64/runtime/include -g -Wno-error=deprecated-declarations -std=gnu++11 -o CMakeFiles/detection.dir/TrackerSource/lapjv.cpp.o -c /home/ubuntu/桌面/RM26_Detect_Ling/detection/TrackerSource/lapjv.cpp",
-  "file": "/home/ubuntu/桌面/RM26_Detect_Ling/detection/TrackerSource/lapjv.cpp"
+  "directory": "/Users/abing/detection/build",
+  "command": "/usr/bin/clang++ -DOV_THREAD=OV_THREAD_TBB -I/Users/abing/detection/./include -I/Users/abing/detection/./TimeCounter -I/Users/abing/detection/./TrackerHeader -I/Users/abing/detection/./Eigen -I/Users/abing/detection/rv_auto_aim/include -I/Users/abing/detection/include -isystem /opt/homebrew/Cellar/opencv/4.12.0_12/include/opencv4 -isystem /opt/homebrew/include -g -std=gnu++17 -arch arm64 -Wno-error=deprecated-declarations -o CMakeFiles/detection.dir/TrackerSource/lapjv.cpp.o -c /Users/abing/detection/TrackerSource/lapjv.cpp",
+  "file": "/Users/abing/detection/TrackerSource/lapjv.cpp",
+  "output": "CMakeFiles/detection.dir/TrackerSource/lapjv.cpp.o"
 },
 {
-  "directory": "/home/ubuntu/桌面/RM26_Detect_Ling/detection/build",
-  "command": "/usr/bin/g++ -DOV_THREAD=OV_THREAD_TBB -D_GLIBCXX_USE_CXX11_ABI=1 -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/./include -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/./TimeCounter -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/./TrackerHeader -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/./Eigen -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/include -isystem /usr/include/opencv4 -isystem /opt/intel/l_openvino_toolkit_ubuntu22_2024.6.0.17404.4c0f47d2335_x86_64/runtime/include -g -Wno-error=deprecated-declarations -std=gnu++11 -o CMakeFiles/detection.dir/TrackerSource/utils.cpp.o -c /home/ubuntu/桌面/RM26_Detect_Ling/detection/TrackerSource/utils.cpp",
-  "file": "/home/ubuntu/桌面/RM26_Detect_Ling/detection/TrackerSource/utils.cpp"
+  "directory": "/Users/abing/detection/build",
+  "command": "/usr/bin/clang++ -DOV_THREAD=OV_THREAD_TBB -I/Users/abing/detection/./include -I/Users/abing/detection/./TimeCounter -I/Users/abing/detection/./TrackerHeader -I/Users/abing/detection/./Eigen -I/Users/abing/detection/rv_auto_aim/include -I/Users/abing/detection/include -isystem /opt/homebrew/Cellar/opencv/4.12.0_12/include/opencv4 -isystem /opt/homebrew/include -g -std=gnu++17 -arch arm64 -Wno-error=deprecated-declarations -o CMakeFiles/detection.dir/TrackerSource/utils.cpp.o -c /Users/abing/detection/TrackerSource/utils.cpp",
+  "file": "/Users/abing/detection/TrackerSource/utils.cpp",
+  "output": "CMakeFiles/detection.dir/TrackerSource/utils.cpp.o"
 },
 {
-  "directory": "/home/ubuntu/桌面/RM26_Detect_Ling/detection/build",
-  "command": "/usr/bin/g++ -DOV_THREAD=OV_THREAD_TBB -D_GLIBCXX_USE_CXX11_ABI=1 -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/./include -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/./TimeCounter -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/./TrackerHeader -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/./Eigen -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/include -isystem /usr/include/opencv4 -isystem /opt/intel/l_openvino_toolkit_ubuntu22_2024.6.0.17404.4c0f47d2335_x86_64/runtime/include -g -Wno-error=deprecated-declarations -std=gnu++11 -o CMakeFiles/detection.dir/src/armor.cpp.o -c /home/ubuntu/桌面/RM26_Detect_Ling/detection/src/armor.cpp",
-  "file": "/home/ubuntu/桌面/RM26_Detect_Ling/detection/src/armor.cpp"
-},
-{
-  "directory": "/home/ubuntu/桌面/RM26_Detect_Ling/detection/build",
-  "command": "/usr/bin/g++ -DOV_THREAD=OV_THREAD_TBB -D_GLIBCXX_USE_CXX11_ABI=1 -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/./include -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/./TimeCounter -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/./TrackerHeader -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/./Eigen -I/home/ubuntu/桌面/RM26_Detect_Ling/detection/include -isystem /usr/include/opencv4 -isystem /opt/intel/l_openvino_toolkit_ubuntu22_2024.6.0.17404.4c0f47d2335_x86_64/runtime/include -g -Wno-error=deprecated-declarations -std=gnu++11 -o CMakeFiles/detection.dir/src/test.cpp.o -c /home/ubuntu/桌面/RM26_Detect_Ling/detection/src/test.cpp",
-  "file": "/home/ubuntu/桌面/RM26_Detect_Ling/detection/src/test.cpp"
+  "directory": "/Users/abing/detection/build",
+  "command": "/usr/bin/clang++ -DOV_THREAD=OV_THREAD_TBB -I/Users/abing/detection/./include -I/Users/abing/detection/./TimeCounter -I/Users/abing/detection/./TrackerHeader -I/Users/abing/detection/./Eigen -I/Users/abing/detection/rv_auto_aim/include -I/Users/abing/detection/include -isystem /opt/homebrew/Cellar/opencv/4.12.0_12/include/opencv4 -isystem /opt/homebrew/include -g -std=gnu++17 -arch arm64 -Wno-error=deprecated-declarations -o CMakeFiles/detection.dir/rv_auto_aim/src/detector.cpp.o -c /Users/abing/detection/rv_auto_aim/src/detector.cpp",
+  "file": "/Users/abing/detection/rv_auto_aim/src/detector.cpp",
+  "output": "CMakeFiles/detection.dir/rv_auto_aim/src/detector.cpp.o"
 }
 ]

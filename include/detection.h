@@ -9,6 +9,8 @@
 #include "timeCounter.hpp"
 #include <shared_mutex>
 #include "BYTETracker.h"
+#include "../rv_auto_aim/include/detector.hpp"
+#include "../rv_auto_aim/include/armor.hpp"
 
 #define __TEST__
 
@@ -28,10 +30,10 @@ namespace detection
         // float length;   //长度
         // float width;    //宽度
 
-        cv::Point p1;
-        cv::Point p2;
-        cv::Point p3;
-        cv::Point p4;
+        cv::Point p1; // 左上
+        cv::Point p2; // 右上
+        cv::Point p3; // 右下
+        cv::Point p4; // 左下
 
         int ID = 0;
         Color color;
@@ -86,7 +88,7 @@ namespace detection
 
         BYTETracker tracker = BYTETracker(10, 10); // 初始化BYTETracker
 
-        static void drawObject(Mat& image, const ArmorData& d);
+        static void drawObject(Mat& image, const ArmorData& d,cv::Mat mask);
         static double sigmoid(double x);
 
         void start_detection();
