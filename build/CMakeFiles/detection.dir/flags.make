@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/clang++
 CXX_DEFINES = -DOV_THREAD=OV_THREAD_TBB
 
-CXX_INCLUDES = -I/Users/abing/detection/./include -I/Users/abing/detection/./TimeCounter -I/Users/abing/detection/./TrackerHeader -I/Users/abing/detection/./Eigen -I/Users/abing/detection/rv_auto_aim/include -I/Users/abing/detection/include -isystem /opt/homebrew/Cellar/opencv/4.12.0_12/include/opencv4 -isystem /opt/homebrew/include
+CXX_INCLUDES = -I/Users/abing/detection/./include -I/Users/abing/detection/./TimeCounter -I/Users/abing/detection/./TrackerHeader -I/Users/abing/detection/./Eigen -I/Users/abing/detection/include -isystem /opt/homebrew/Cellar/opencv/4.12.0_12/include/opencv4 -isystem /opt/homebrew/include
 
 CXX_FLAGSarm64 = -g -std=gnu++17 -arch arm64 -Wno-error=deprecated-declarations
 

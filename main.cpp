@@ -1,5 +1,5 @@
 #include <iostream>
-#include "detection.h"
+#include "yolo_detection.hpp"
 #include <thread>
 #include <vector>
 #include <functional>
@@ -8,9 +8,7 @@
 #include <ctime> 
 #include <opencv2/opencv.hpp>
 #include <string>
-
-
-int main(int, char**)
+int main(int argc, char** argv)
 {
     std::string video_path = "/Users/abing/detection/video/2.mp4";
     std::string model_path = "/Users/abing/detection/model/new.onnx";

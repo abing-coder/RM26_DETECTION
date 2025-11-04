@@ -273,29 +273,53 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/detection.dir/build.make CMakeFiles/detection.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-rv_auto_aim/src/detector.o: rv_auto_aim/src/detector.cpp.o
-.PHONY : rv_auto_aim/src/detector.o
+src/traditional_detector.o: src/traditional_detector.cpp.o
+.PHONY : src/traditional_detector.o
 
 # target to build an object file
-rv_auto_aim/src/detector.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/detection.dir/build.make CMakeFiles/detection.dir/rv_auto_aim/src/detector.cpp.o
-.PHONY : rv_auto_aim/src/detector.cpp.o
+src/traditional_detector.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/detection.dir/build.make CMakeFiles/detection.dir/src/traditional_detector.cpp.o
+.PHONY : src/traditional_detector.cpp.o
 
-rv_auto_aim/src/detector.i: rv_auto_aim/src/detector.cpp.i
-.PHONY : rv_auto_aim/src/detector.i
+src/traditional_detector.i: src/traditional_detector.cpp.i
+.PHONY : src/traditional_detector.i
 
 # target to preprocess a source file
-rv_auto_aim/src/detector.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/detection.dir/build.make CMakeFiles/detection.dir/rv_auto_aim/src/detector.cpp.i
-.PHONY : rv_auto_aim/src/detector.cpp.i
+src/traditional_detector.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/detection.dir/build.make CMakeFiles/detection.dir/src/traditional_detector.cpp.i
+.PHONY : src/traditional_detector.cpp.i
 
-rv_auto_aim/src/detector.s: rv_auto_aim/src/detector.cpp.s
-.PHONY : rv_auto_aim/src/detector.s
+src/traditional_detector.s: src/traditional_detector.cpp.s
+.PHONY : src/traditional_detector.s
 
 # target to generate assembly for a file
-rv_auto_aim/src/detector.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/detection.dir/build.make CMakeFiles/detection.dir/rv_auto_aim/src/detector.cpp.s
-.PHONY : rv_auto_aim/src/detector.cpp.s
+src/traditional_detector.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/detection.dir/build.make CMakeFiles/detection.dir/src/traditional_detector.cpp.s
+.PHONY : src/traditional_detector.cpp.s
+
+src/yolo_detection.o: src/yolo_detection.cpp.o
+.PHONY : src/yolo_detection.o
+
+# target to build an object file
+src/yolo_detection.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/detection.dir/build.make CMakeFiles/detection.dir/src/yolo_detection.cpp.o
+.PHONY : src/yolo_detection.cpp.o
+
+src/yolo_detection.i: src/yolo_detection.cpp.i
+.PHONY : src/yolo_detection.i
+
+# target to preprocess a source file
+src/yolo_detection.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/detection.dir/build.make CMakeFiles/detection.dir/src/yolo_detection.cpp.i
+.PHONY : src/yolo_detection.cpp.i
+
+src/yolo_detection.s: src/yolo_detection.cpp.s
+.PHONY : src/yolo_detection.s
+
+# target to generate assembly for a file
+src/yolo_detection.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/detection.dir/build.make CMakeFiles/detection.dir/src/yolo_detection.cpp.s
+.PHONY : src/yolo_detection.cpp.s
 
 # Help Target
 help:
@@ -324,9 +348,12 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... rv_auto_aim/src/detector.o"
-	@echo "... rv_auto_aim/src/detector.i"
-	@echo "... rv_auto_aim/src/detector.s"
+	@echo "... src/traditional_detector.o"
+	@echo "... src/traditional_detector.i"
+	@echo "... src/traditional_detector.s"
+	@echo "... src/yolo_detection.o"
+	@echo "... src/yolo_detection.i"
+	@echo "... src/yolo_detection.s"
 .PHONY : help
 
 

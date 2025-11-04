@@ -790,7 +790,7 @@ CMakeFiles/detection.dir/main.cpp.o: /Users/abing/detection/main.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__fwd/stack.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/print \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/unistd.h \
-  /Users/abing/detection/./include/detection.h \
+  /Users/abing/detection/./include/yolo_detection.hpp \
   /opt/homebrew/Cellar/opencv/4.12.0_12/include/opencv4/opencv2/opencv.hpp \
   /opt/homebrew/Cellar/opencv/4.12.0_12/include/opencv4/opencv2/opencv_modules.hpp \
   /opt/homebrew/Cellar/opencv/4.12.0_12/include/opencv4/opencv2/core.hpp \
@@ -1241,9 +1241,8 @@ CMakeFiles/detection.dir/main.cpp.o: /Users/abing/detection/main.cpp \
   /Users/abing/detection/./Eigen/src/Eigenvalues/GeneralizedEigenSolver.h \
   /Users/abing/detection/./Eigen/src/Eigenvalues/./RealQZ.h \
   /Users/abing/detection/./Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
-  /Users/abing/detection/./include/../rv_auto_aim/include/detector.hpp \
-  /Users/abing/detection/./include/../rv_auto_aim/include/armor.hpp \
-  /Users/abing/detection/./include/detection.hpp \
+  /Users/abing/detection/./include/traditional_detector.hpp \
+  /Users/abing/detection/./include/armor.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/random \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/bernoulli_distribution.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/uniform_real_distribution.h \

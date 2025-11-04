@@ -3,15 +3,7 @@ project(detection VERSION 0.1.0 LANGUAGES C CXX)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# set(OpenCV_DIR "/Users/Opencv/opencv_build")
-find_package(OpenCV REQUIRED)
 
-find_package(OpenVINO REQUIRED)
-
-
-# find_package(OpenCV REQUIRED COMPONENTS core dnn)
-# find_package(OpenCV REQUIRED COMPONENTS core imgproc imgcodecs highgui)
-# find_package(OpenVINO REQUIRED COMPONENTS runtime)
 set(OpenVINO_DIR /opt/intel/openvino_2024.6.0/cmake)
 find_package(OpenVINO REQUIRED)
 find_package(OpenCV REQUIRED)
@@ -26,11 +18,11 @@ include_directories(./include)
 include_directories(./TimeCounter)
 include_directories(./TrackerHeader)
 include_directories(./Eigen)
-include_directories(${PROJECT_SOURCE_DIR}/rv_auto_aim/include)
+
 
 file(GLOB_RECURSE SOURCES "TrackerSource/*.cpp")
-file(GLOB_RECURSE DETECTOR_SOURCES "rv_auto_aim/src/*.cpp")
-add_executable(${PROJECT_NAME} main.cpp ${SOURCES} ${DETECTOR_SOURCES})
+file(GLOB_RECURSE HEADERS "src/*.cpp")
+add_executable(${PROJECT_NAME} main.cpp ${SOURCES} ${HEADERS})
 # message(${SOURCES})
 
 

@@ -3,7 +3,9 @@
         {
             "name": "Mac",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "/opt/homebrew/Cellar/opencv/4.12.0_12/include/opencv4",
+                "/opt/homebrew/Cellar/eigen/3.4.1/include/eigen3/Eigen"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/clang",
