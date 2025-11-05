@@ -1,13 +1,13 @@
 #include "traditional_detector.hpp"
 #include "yolo_detection.hpp"
 
-int color = 0;//0-红色，1-蓝色
-Detector::Detector(const int & bin_thres, const int & color, const LightParams & l, const ArmorParams & a)
-: binary_thres(bin_thres), detect_color(color), l(l), a(a){};
+int detect_color = detection::DetectionArmor::detect_color;//0-红色，1-蓝色
+Detector::Detector(const int & bin_thres, const LightParams & l, const ArmorParams & a)
+: binary_thres(bin_thres), l(l), a(a){};
 
 cv::Mat Detector::preprocessImage(const cv::Mat & rgb_img)
 {
-  if(color==1)
+  if(detect_color==1)
   {
     cv::Mat gray_img;
     cv::cvtColor(rgb_img, gray_img, cv::COLOR_RGB2GRAY);
@@ -19,7 +19,7 @@ cv::Mat Detector::preprocessImage(const cv::Mat & rgb_img)
     
   }
   
-  if(color==0)
+  if(detect_color==0)
   {
     int flag = 2; // 0-蓝色通道，1-绿色通道，2-红色通道
     std::vector<cv::Mat> channels;
@@ -87,18 +87,11 @@ std::vector<Light> Detector::findLights(const cv::Mat & rbg_img, const cv::Mat &
         { 
           for (int j = 0; j < roi.cols; j++) //列
           {
-            if (cv::pointPolygonTest(contour, cv::Point2f(j + rect.x, i + rect.y), false) >= 0) // pointPolygonTest判断点是否在轮廓内
+            if (cv::pointPolygonTest(contour, cv::Point2f(j + rect.x, i + rect.y), false) >= 0) 
             {
-              // if point is inside contour
-              if(color == 0)
-              {
-                sum_r += roi.at<cv::Vec3b>(i, j)[2]; //红色
-                sum_b += roi.at<cv::Vec3b>(i, j)[0]; //蓝色
-              }
-              else{
-                sum_r += roi.at<cv::Vec3b>(i, j)[0]; //红色
-                sum_b += roi.at<cv::Vec3b>(i, j)[1]; //蓝色
-              }
+              
+              sum_r += roi.at<cv::Vec3b>(i, j)[2]; //红色
+              sum_b += roi.at<cv::Vec3b>(i, j)[0]; //蓝色
               
             }
           }
@@ -145,7 +138,8 @@ bool Detector::containLight(
   auto points = std::vector<cv::Point2f>{light_1.top, light_1.bottom, light_2.top, light_2.bottom};
   auto bounding_rect = cv::boundingRect(points);
 
-  for (const auto & test_light : lights) {
+  for (const auto & test_light : lights) 
+  {
     if (test_light.center == light_1.center || test_light.center == light_2.center) continue;
 
     if (
@@ -158,7 +152,7 @@ bool Detector::containLight(
   return false;
 }
 
-ArmorType Detector::isArmor(const Light & light_1, const Light & light_2)
+ArmorType Detector::isArmor(const Light & light_1, const Light & light_2)//判断是否为装甲板及类型
 {
   // Ratio of the length of 2 lights (short side / long side)
   float light_length_ratio = light_1.length < light_2.length ? light_1.length / light_2.length
@@ -174,7 +168,7 @@ ArmorType Detector::isArmor(const Light & light_1, const Light & light_2)
                              center_distance < a.max_large_center_distance);
 
   // Angle of light center connection
-  cv::Point2f diff = light_1.center - light_2.center;
+  cv::Point2f diff = light_1.center - light_2.center; 
   float angle = std::abs(std::atan(diff.y / diff.x)) / CV_PI * 180;
   bool angle_ok = angle < a.max_angle;
 
@@ -199,7 +193,7 @@ ArmorType Detector::isArmor(const Light & light_1, const Light & light_2)
 
   return type;
 }
-cv::Mat Detector::getAllNumbersImage()
+cv::Mat Detector::getAllNumbersImage() ///获取所有数字图片
 {
   if (armors_.empty()) {
     return cv::Mat(cv::Size(20, 28), CV_8UC1);
@@ -253,7 +247,7 @@ void Detector::drawResults(cv::Mat & img)
   for (const auto & light : lights_) {
     cv::circle(img, light.top, 3, cv::Scalar(255, 255, 255), 1);
     cv::circle(img, light.bottom, 3, cv::Scalar(255, 255, 255), 1);
-    auto line_color = light.color == RED ? cv::Scalar(255, 255, 0) : cv::Scalar(255, 0, 255);
+    auto line_color = light.color == RED ? cv::Scalar(255, 0, 255) : cv::Scalar(255, 255, 0);
     cv::line(img, light.top, light.bottom, line_color, 5);
   }
 

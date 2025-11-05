@@ -19,6 +19,7 @@ using namespace cv;
 using namespace ov;
 using namespace cv::dnn;
 
+
 namespace detection
 {
 
@@ -58,8 +59,6 @@ namespace detection
     timeCounter counter = timeCounter("run a frame");
     bool ifCountTime = false; // 是否计时
 
-    // 指定识别的颜色
-    int detect_color = 0; // 0: 红色，1: 蓝色
 
     // 当前帧的装甲板数据
     vector<ArmorData> armorsDatas; 
@@ -80,6 +79,8 @@ namespace detection
     std::atomic<bool> data_ready{false};
 
     public:
+        // 指定识别的颜色
+        static int detect_color; // 0: 红色，1: 蓝色
         
         DetectionArmor() = default; //默认构造函数
         DetectionArmor(const DetectionArmor&) = delete; // 禁止拷贝
@@ -88,7 +89,7 @@ namespace detection
 
         BYTETracker tracker = BYTETracker(10, 10); // 初始化BYTETracker
 
-        static void drawObject(Mat& image, const ArmorData& d,cv::Mat mask);
+        static void drawObject(Mat& image, const vector<ArmorData>& datas);
         static double sigmoid(double x);
 
         void start_detection();

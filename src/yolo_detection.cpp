@@ -2,6 +2,8 @@
 
 using namespace detection;
 
+int detection::DetectionArmor::detect_color = 0; // 0: 红色，1: 蓝色
+
 bool setThreadPriority(std::thread& thread, int priority) {
     pthread_t pthread = thread.native_handle();
     
@@ -65,28 +67,43 @@ void DetectionArmor::clearHeap()
 }
 Detector::LightParams l_params; 
 Detector::ArmorParams a_params;
-Detector detector(130,0,l_params,a_params); 
-void DetectionArmor::drawObject(Mat& image, const ArmorData& d,cv::Mat mask)
-{
-    // 绘制装甲板的边界框
-    std::vector<Point> points = {d.p1, d.p2, d.p3, d.p4};
+Detector detector(130,l_params,a_params); 
+
+
+
+void get_roi(Mat& image,vector<Point>& points,Mat& ROI)
+{ 
+    cv::Mat mask = Mat::zeros(image.size(), CV_8UC1);
     
-    cv::Point lt = cv::Point(d.p1.x-20, d.p1.y-20);  // 左上角
-    cv::Point rb = cv::Point(d.p3.x+20, d.p3.y+20);  // 右下角
-    cv::Point lb = cv::Point(d.p2.x-20, d.p2.y+20);  // 左下角
-    cv::Point rt = cv::Point(d.p4.x+20, d.p4.y-20);  // 右上角
+    Point lt = points[0];  // 左上角
+    Point rb = points[2];  // 右下角
+    Point lb = points[1];  // 左下角
+    Point rt = points[3];  // 右上角
     cv::polylines(image, std::vector<Point>{lt, rt, rb, lb}, true, Scalar(255, 0, 0), 2);
     std::vector<cv::Point> roi_points = {lt, rt, rb, lb};
-   
     cv::fillConvexPoly(mask, roi_points,Scalar(255,0,0));
-    Mat ROI;
     cv::bitwise_and(image, image,ROI, mask);
-    cv::imshow("ROI", ROI);
-    detector.detect(ROI);
-    detector.drawResults(image);
+}
+void DetectionArmor::drawObject(Mat& image,const vector<ArmorData>& datas)
+{
+    // 绘制装甲板的边界框
+    //std::vector<Point> points = {d.p1, d.p2, d.p3, d.p4};
+    for(const ArmorData& d : datas)
+    {
+        cv::Point lt = cv::Point(d.p1.x-20, d.p1.y-20);  // 左上角
+        cv::Point rb = cv::Point(d.p3.x+20, d.p3.y+20);  // 右下角
+        cv::Point lb = cv::Point(d.p2.x-20, d.p2.y+20);  // 左下角
+        cv::Point rt = cv::Point(d.p4.x+20, d.p4.y-20);  // 右上角
+        std::vector<Point> points = {lt, rt, rb, lb};
+        Mat ROI;
+        get_roi(image,points,ROI);
+        cv::imshow("ROI", ROI);
+        detector.detect(ROI);
+        detector.drawResults(image);
+    }
+    
 
     cv::imshow("Detection", image);
-
 
     // cv::rectangle(image, lt, rb, Scalar(0, 255, 0), 2);
 
@@ -107,7 +124,7 @@ void DetectionArmor::run()
         cap >> frame;
 
         resize(frame, img, Size(640, 640));
-        
+        auto start = std::chrono::high_resolution_clock::now();
         // 推理
         infer();
 
@@ -117,10 +134,11 @@ void DetectionArmor::run()
             frame_count = 0;
             cap.set(cv::CAP_PROP_POS_FRAMES, 0);
         }
-
+        auto end = std::chrono::high_resolution_clock::now();
+        std::cout << "FPS: " << 1000.0 / std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count() << std::endl;
         showImage();
 
-        if (cv::waitKey(120) == 27)
+        if (cv::waitKey(1) == 27)
         {
             isRunning = false; // 设置线程停止标志
             clearHeap();
@@ -285,16 +303,6 @@ void DetectionArmor::drawTracks(Mat& image)
             Point tl = Point(tlwh[0], tlwh[1]); // 左上角   1
             Point br = Point(tlwh[0] + tlwh[2], tlwh[1] + tlwh[3]); // 右下角  3
 
-
-            //这是测试同时取跟踪四个点的效果(不太理想)
-            //Point tr = Point(tlwh[0] + tlwh[2], tlwh[1]); // 右上角  2
-            //Point bl = Point(tlwh[0], tlwh[1] + tlwh[3]); // 左下角  4
-            
-            //std::vector<Point> points = {tl, tr, br, bl}; // 1 2 3 4
-
-            //cv::polylines(image, points, true, cv::Scalar(0, 255, 0), 2);
-
-
             Point center = Point(tlwh[0] + tlwh[2] / 2, tlwh[1] + tlwh[3] / 2);
 
             circle(image, center, 5, Scalar(0,255,0), -1);
@@ -322,7 +330,6 @@ void DetectionArmor::start_detection()
     this->isRunning = true; // 设置线程运行标志
     run();
 
-    // run(); // 直接调用run函数
 }
 
 void __TEST__ DetectionArmor::showImage()
@@ -330,15 +337,15 @@ void __TEST__ DetectionArmor::showImage()
     if (!img.empty()) 
     {
         std::cout << getdata().size() << std::endl;
-        cv::Mat mask = Mat::zeros(img.size(), CV_8UC1);
-        for (auto i : getdata()) 
-        {
-            
-            drawObject(img, i,mask); // 绘制检测结果
-        }
+        
+        // for (auto i : getdata()) 
+        // {
+        //     drawObject(img, i); // 绘制检测结果
+        // }
+        drawObject(img, getdata());
         //drawTracks(img); // 绘制跟踪轨迹
 
-        cv::imshow("Detection Armor", img); // 显示图像
+        //cv::imshow("Detection Armor", img); // 显示图像
         // format_print_data_test();
     }
 

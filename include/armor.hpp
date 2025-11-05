@@ -9,7 +9,7 @@
 const int RED = 0;
 const int BLUE = 1;
 
-enum class ArmorType { SMALL, LARGE, INVALID };
+enum class ArmorType { SMALL, LARGE, INVALID }; //装甲板类型: 小、大、无效
 const std::string ARMOR_TYPE_STR[3] = {"small", "large", "invalid"};
 
 class Light : public cv::RotatedRect

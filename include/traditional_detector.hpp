@@ -30,7 +30,7 @@ public:
     double max_angle = 40.0;
   };
 
-  Detector(const int & bin_thres, const int & color, const LightParams & l, const ArmorParams & a); 
+  Detector(const int & bin_thres, const LightParams & l, const ArmorParams & a); 
 
   std::vector<Armor> detect(const cv::Mat & input); 
 
@@ -43,7 +43,7 @@ public:
   void drawResults(cv::Mat & img); //在图像上绘制检测结果
 
   int binary_thres;
-  int detect_color;
+  //int detect_color;
   LightParams l; //灯条参数
   ArmorParams a; //装甲板参数
 
