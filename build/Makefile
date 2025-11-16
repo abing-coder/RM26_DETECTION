@@ -273,6 +273,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/detection.dir/build.make CMakeFiles/detection.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/pnp.o: src/pnp.cpp.o
+.PHONY : src/pnp.o
+
+# target to build an object file
+src/pnp.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/detection.dir/build.make CMakeFiles/detection.dir/src/pnp.cpp.o
+.PHONY : src/pnp.cpp.o
+
+src/pnp.i: src/pnp.cpp.i
+.PHONY : src/pnp.i
+
+# target to preprocess a source file
+src/pnp.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/detection.dir/build.make CMakeFiles/detection.dir/src/pnp.cpp.i
+.PHONY : src/pnp.cpp.i
+
+src/pnp.s: src/pnp.cpp.s
+.PHONY : src/pnp.s
+
+# target to generate assembly for a file
+src/pnp.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/detection.dir/build.make CMakeFiles/detection.dir/src/pnp.cpp.s
+.PHONY : src/pnp.cpp.s
+
 src/traditional_detector.o: src/traditional_detector.cpp.o
 .PHONY : src/traditional_detector.o
 
@@ -348,6 +372,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... src/pnp.o"
+	@echo "... src/pnp.i"
+	@echo "... src/pnp.s"
 	@echo "... src/traditional_detector.o"
 	@echo "... src/traditional_detector.i"
 	@echo "... src/traditional_detector.s"

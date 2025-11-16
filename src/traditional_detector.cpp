@@ -9,10 +9,8 @@ cv::Mat Detector::preprocessImage(const cv::Mat & rgb_img)
 {
   if(detect_color==1)
   {
-    cv::Mat gray_img;
+    cv::Mat gray_img,binary_img;
     cv::cvtColor(rgb_img, gray_img, cv::COLOR_RGB2GRAY);
-
-    cv::Mat binary_img;
     cv::threshold(gray_img, binary_img, binary_thres, 255, cv::THRESH_BINARY);
     cv::imshow("binary_img", binary_img);
     return binary_img;
@@ -241,6 +239,8 @@ cv::Point2f getLineIntersection(const std::pair<cv::Point2f, cv::Point2f>& line1
         (A2 * C1 - A1 * C2) / D
     );
 }
+
+cv::Point2f center;
 void Detector::drawResults(cv::Mat & img)
 {
   // Draw Lights
@@ -257,7 +257,7 @@ void Detector::drawResults(cv::Mat & img)
     cv::line(img, armor.left_light.bottom, armor.right_light.top, cv::Scalar(0, 255, 0), 2);
     std::pair<cv::Point2f, cv::Point2f> line1 = {armor.left_light.top, armor.right_light.bottom};
     std::pair<cv::Point2f, cv::Point2f> line2 = {armor.left_light.bottom, armor.right_light.top};
-    cv::Point2f center = getLineIntersection(line1, line2);
+    center = getLineIntersection(line1, line2);
     cv::circle(img, center, 5, cv::Scalar(255, 0, 0), -1);
   }
 
@@ -267,6 +267,7 @@ void Detector::drawResults(cv::Mat & img)
       img, armor.classfication_result, armor.left_light.top, cv::FONT_HERSHEY_SIMPLEX, 0.8,
       cv::Scalar(0, 255, 255), 2);
   }
+
 }
 std::vector<Armor> Detector::detect(const cv::Mat & input)
 {
@@ -279,6 +280,7 @@ std::vector<Armor> Detector::detect(const cv::Mat & input)
     //     classifier->extractNumbers(input, armors_);
     //     classifier->classify(armors_);
     // }
+    auto num_img = getAllNumbersImage();
 
     return armors_;
 }

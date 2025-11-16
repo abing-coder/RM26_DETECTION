@@ -2,7 +2,7 @@
 
 using namespace detection;
 
-int detection::DetectionArmor::detect_color = 0; // 0: 红色，1: 蓝色
+int detection::DetectionArmor::detect_color = 1; // 0: 红色，1: 蓝色
 
 bool setThreadPriority(std::thread& thread, int priority) {
     pthread_t pthread = thread.native_handle();
@@ -65,22 +65,19 @@ void DetectionArmor::clearHeap()
     cap.release();
     cv::destroyAllWindows();
 }
+
 Detector::LightParams l_params; 
 Detector::ArmorParams a_params;
 Detector detector(130,l_params,a_params); 
-
-
-
 void get_roi(Mat& image,vector<Point>& points,Mat& ROI)
 { 
     cv::Mat mask = Mat::zeros(image.size(), CV_8UC1);
-    
     Point lt = points[0];  // 左上角
     Point rb = points[2];  // 右下角
     Point lb = points[1];  // 左下角
     Point rt = points[3];  // 右上角
-    cv::polylines(image, std::vector<Point>{lt, rt, rb, lb}, true, Scalar(255, 0, 0), 2);
-    std::vector<cv::Point> roi_points = {lt, rt, rb, lb};
+    // cv::polylines(image, std::vector<Point>{lt, rt, rb, lb}, true, Scalar(255, 0, 0), 2);
+    std::vector<cv::Point> roi_points = {lt, rt, rb, lb}; 
     cv::fillConvexPoly(mask, roi_points,Scalar(255,0,0));
     cv::bitwise_and(image, image,ROI, mask);
 }
@@ -138,7 +135,7 @@ void DetectionArmor::run()
         std::cout << "FPS: " << 1000.0 / std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count() << std::endl;
         showImage();
 
-        if (cv::waitKey(1) == 27)
+        if (cv::waitKey(120) == 27)
         {
             isRunning = false; // 设置线程停止标志
             clearHeap();
@@ -168,7 +165,7 @@ void DetectionArmor::infer()
     ov::Shape output_shape = output.get_shape();
     cv::Mat output_buffer(output_shape[1], output_shape[2], CV_32F, output.data());
     
-    float conf_threshold = 0.6;   
+    float conf_threshold = 0.5;   
     float nms_threshold = 0.4;  
     
     // 存储临时结果
@@ -198,6 +195,7 @@ void DetectionArmor::infer()
         cv::Mat classes_scores = output_buffer.row(i).colRange(13, 22);// 类别概率
         cv::Point class_id, color_id;
         cv::minMaxLoc(classes_scores, nullptr, nullptr, nullptr, &class_id);
+        std::cout << "Class ID: " << class_id.x << std::endl;
         cv::minMaxLoc(color_scores, nullptr, nullptr, nullptr, &color_id);
         // 加入预测出来的数字和颜色
         num_class.push_back(class_id.x);

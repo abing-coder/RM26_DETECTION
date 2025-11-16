@@ -156,10 +156,24 @@ CMakeFiles/detection.dir/TrackerSource/utils.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/detection.dir/TrackerSource/utils.cpp.s"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/abing/detection/TrackerSource/utils.cpp -o CMakeFiles/detection.dir/TrackerSource/utils.cpp.s
 
+CMakeFiles/detection.dir/src/pnp.cpp.o: CMakeFiles/detection.dir/flags.make
+CMakeFiles/detection.dir/src/pnp.cpp.o: /Users/abing/detection/src/pnp.cpp
+CMakeFiles/detection.dir/src/pnp.cpp.o: CMakeFiles/detection.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/abing/detection/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/detection.dir/src/pnp.cpp.o"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/detection.dir/src/pnp.cpp.o -MF CMakeFiles/detection.dir/src/pnp.cpp.o.d -o CMakeFiles/detection.dir/src/pnp.cpp.o -c /Users/abing/detection/src/pnp.cpp
+
+CMakeFiles/detection.dir/src/pnp.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/detection.dir/src/pnp.cpp.i"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/abing/detection/src/pnp.cpp > CMakeFiles/detection.dir/src/pnp.cpp.i
+
+CMakeFiles/detection.dir/src/pnp.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/detection.dir/src/pnp.cpp.s"
+	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/abing/detection/src/pnp.cpp -o CMakeFiles/detection.dir/src/pnp.cpp.s
+
 CMakeFiles/detection.dir/src/traditional_detector.cpp.o: CMakeFiles/detection.dir/flags.make
 CMakeFiles/detection.dir/src/traditional_detector.cpp.o: /Users/abing/detection/src/traditional_detector.cpp
 CMakeFiles/detection.dir/src/traditional_detector.cpp.o: CMakeFiles/detection.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/abing/detection/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/detection.dir/src/traditional_detector.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/abing/detection/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/detection.dir/src/traditional_detector.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/detection.dir/src/traditional_detector.cpp.o -MF CMakeFiles/detection.dir/src/traditional_detector.cpp.o.d -o CMakeFiles/detection.dir/src/traditional_detector.cpp.o -c /Users/abing/detection/src/traditional_detector.cpp
 
 CMakeFiles/detection.dir/src/traditional_detector.cpp.i: cmake_force
@@ -173,7 +187,7 @@ CMakeFiles/detection.dir/src/traditional_detector.cpp.s: cmake_force
 CMakeFiles/detection.dir/src/yolo_detection.cpp.o: CMakeFiles/detection.dir/flags.make
 CMakeFiles/detection.dir/src/yolo_detection.cpp.o: /Users/abing/detection/src/yolo_detection.cpp
 CMakeFiles/detection.dir/src/yolo_detection.cpp.o: CMakeFiles/detection.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/abing/detection/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/detection.dir/src/yolo_detection.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/abing/detection/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/detection.dir/src/yolo_detection.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/detection.dir/src/yolo_detection.cpp.o -MF CMakeFiles/detection.dir/src/yolo_detection.cpp.o.d -o CMakeFiles/detection.dir/src/yolo_detection.cpp.o -c /Users/abing/detection/src/yolo_detection.cpp
 
 CMakeFiles/detection.dir/src/yolo_detection.cpp.i: cmake_force
@@ -192,6 +206,7 @@ detection_OBJECTS = \
 "CMakeFiles/detection.dir/TrackerSource/kalmanFilter.cpp.o" \
 "CMakeFiles/detection.dir/TrackerSource/lapjv.cpp.o" \
 "CMakeFiles/detection.dir/TrackerSource/utils.cpp.o" \
+"CMakeFiles/detection.dir/src/pnp.cpp.o" \
 "CMakeFiles/detection.dir/src/traditional_detector.cpp.o" \
 "CMakeFiles/detection.dir/src/yolo_detection.cpp.o"
 
@@ -204,6 +219,7 @@ detection: CMakeFiles/detection.dir/TrackerSource/STrack.cpp.o
 detection: CMakeFiles/detection.dir/TrackerSource/kalmanFilter.cpp.o
 detection: CMakeFiles/detection.dir/TrackerSource/lapjv.cpp.o
 detection: CMakeFiles/detection.dir/TrackerSource/utils.cpp.o
+detection: CMakeFiles/detection.dir/src/pnp.cpp.o
 detection: CMakeFiles/detection.dir/src/traditional_detector.cpp.o
 detection: CMakeFiles/detection.dir/src/yolo_detection.cpp.o
 detection: CMakeFiles/detection.dir/build.make
@@ -265,7 +281,7 @@ detection: /opt/homebrew/lib/libopencv_photo.4.12.0.dylib
 detection: /opt/homebrew/lib/libopencv_imgproc.4.12.0.dylib
 detection: /opt/homebrew/lib/libopencv_core.4.12.0.dylib
 detection: CMakeFiles/detection.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/abing/detection/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable detection"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/abing/detection/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable detection"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/detection.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

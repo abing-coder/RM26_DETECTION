@@ -11,6 +11,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/detection.dir/TrackerSource/utils.cpp.o.d"
   "CMakeFiles/detection.dir/main.cpp.o"
   "CMakeFiles/detection.dir/main.cpp.o.d"
+  "CMakeFiles/detection.dir/src/pnp.cpp.o"
+  "CMakeFiles/detection.dir/src/pnp.cpp.o.d"
   "CMakeFiles/detection.dir/src/traditional_detector.cpp.o"
   "CMakeFiles/detection.dir/src/traditional_detector.cpp.o.d"
   "CMakeFiles/detection.dir/src/yolo_detection.cpp.o"

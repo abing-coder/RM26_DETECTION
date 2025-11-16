@@ -37,6 +37,12 @@
 },
 {
   "directory": "/Users/abing/detection/build",
+  "command": "/usr/bin/clang++ -DOV_THREAD=OV_THREAD_TBB -I/Users/abing/detection/./include -I/Users/abing/detection/./TimeCounter -I/Users/abing/detection/./TrackerHeader -I/Users/abing/detection/./Eigen -I/Users/abing/detection/include -isystem /opt/homebrew/Cellar/opencv/4.12.0_12/include/opencv4 -isystem /opt/homebrew/include -g -std=gnu++17 -arch arm64 -Wno-error=deprecated-declarations -o CMakeFiles/detection.dir/src/pnp.cpp.o -c /Users/abing/detection/src/pnp.cpp",
+  "file": "/Users/abing/detection/src/pnp.cpp",
+  "output": "CMakeFiles/detection.dir/src/pnp.cpp.o"
+},
+{
+  "directory": "/Users/abing/detection/build",
   "command": "/usr/bin/clang++ -DOV_THREAD=OV_THREAD_TBB -I/Users/abing/detection/./include -I/Users/abing/detection/./TimeCounter -I/Users/abing/detection/./TrackerHeader -I/Users/abing/detection/./Eigen -I/Users/abing/detection/include -isystem /opt/homebrew/Cellar/opencv/4.12.0_12/include/opencv4 -isystem /opt/homebrew/include -g -std=gnu++17 -arch arm64 -Wno-error=deprecated-declarations -o CMakeFiles/detection.dir/src/traditional_detector.cpp.o -c /Users/abing/detection/src/traditional_detector.cpp",
   "file": "/Users/abing/detection/src/traditional_detector.cpp",
   "output": "CMakeFiles/detection.dir/src/traditional_detector.cpp.o"

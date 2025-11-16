@@ -5,6 +5,7 @@
 #include "armor.hpp"
 // #include "number_classifier.hpp"
 #include <vector>
+#include "yolo_detection.hpp"
 
 class Detector
 {
@@ -20,7 +21,8 @@ public:
 
   struct ArmorParams
   {
-    double min_light_ratio = 0.7;
+    //灯条宽度与高度比值
+    double min_light_ratio = 0.7; 
     //灯条间距与灯条高度比值
     double min_small_center_distance = 0.8;
     double max_small_center_distance = 3.2;
@@ -54,7 +56,7 @@ public:
 private:
   bool isLight(const Light & possible_light); //判断是否为灯条
   bool containLight(
-    const Light & light_1, const Light & light_2, const std::vector<Light> & lights); 
+  const Light & light_1, const Light & light_2, const std::vector<Light> & lights); 
   ArmorType isArmor(const Light & light_1, const Light & light_2); //判断是否为装甲板及类型
 
   std::vector<Light> lights_; //检测到的灯条
