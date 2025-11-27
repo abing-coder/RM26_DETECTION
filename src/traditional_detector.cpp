@@ -126,7 +126,7 @@ std::vector<Armor> Detector::matchLights(const std::vector<Light> & lights)
       }
     }
   }
-  std::cout << "Detected armors: " << armors.size() << std::endl;
+  // std::cout << "Detected armors: " << armors.size() << std::endl;
   return armors;
 }
 

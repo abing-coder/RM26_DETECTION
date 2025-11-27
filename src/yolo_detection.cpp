@@ -2,7 +2,7 @@
 
 using namespace detection;
 
-int detection::DetectionArmor::detect_color = 1; // 0: 红色，1: 蓝色
+int detection::DetectionArmor::detect_color = 0; // 0: 红色，1: 蓝色
 
 bool setThreadPriority(std::thread& thread, int priority) {
     pthread_t pthread = thread.native_handle();
@@ -68,7 +68,7 @@ void DetectionArmor::clearHeap()
 
 Detector::LightParams l_params; 
 Detector::ArmorParams a_params;
-Detector detector(130,l_params,a_params); 
+Detector detector(100,l_params,a_params); 
 void get_roi(Mat& image,vector<Point>& points,Mat& ROI)
 { 
     cv::Mat mask = Mat::zeros(image.size(), CV_8UC1);
@@ -76,7 +76,7 @@ void get_roi(Mat& image,vector<Point>& points,Mat& ROI)
     Point rb = points[2];  // 右下角
     Point lb = points[1];  // 左下角
     Point rt = points[3];  // 右上角
-    // cv::polylines(image, std::vector<Point>{lt, rt, rb, lb}, true, Scalar(255, 0, 0), 2);
+    cv::polylines(image, std::vector<Point>{lt, rt, rb, lb}, true, Scalar(255, 0, 0), 2);
     std::vector<cv::Point> roi_points = {lt, rt, rb, lb}; 
     cv::fillConvexPoly(mask, roi_points,Scalar(255,0,0));
     cv::bitwise_and(image, image,ROI, mask);
@@ -85,6 +85,7 @@ void DetectionArmor::drawObject(Mat& image,const vector<ArmorData>& datas)
 {
     // 绘制装甲板的边界框
     //std::vector<Point> points = {d.p1, d.p2, d.p3, d.p4};
+    std::cout << "datas: " << datas.size() << endl;
     for(const ArmorData& d : datas)
     {
         cv::Point lt = cv::Point(d.p1.x-20, d.p1.y-20);  // 左上角
@@ -195,7 +196,7 @@ void DetectionArmor::infer()
         cv::Mat classes_scores = output_buffer.row(i).colRange(13, 22);// 类别概率
         cv::Point class_id, color_id;
         cv::minMaxLoc(classes_scores, nullptr, nullptr, nullptr, &class_id);
-        std::cout << "Class ID: " << class_id.x << std::endl;
+        //std::cout << "Class ID: " << class_id.x << std::endl;
         cv::minMaxLoc(color_scores, nullptr, nullptr, nullptr, &color_id);
         // 加入预测出来的数字和颜色
         num_class.push_back(class_id.x);
@@ -249,20 +250,21 @@ void DetectionArmor::infer()
     std::vector<ArmorData> data;
     for (int valid_index = 0; valid_index < indices.size(); ++valid_index) 
     {
+        int idx = indices[valid_index];
         ArmorData d;
 
-        d.p1 = fourPointModel[valid_index][0];
-        d.p2 = fourPointModel[valid_index][1];
-        d.p3 = fourPointModel[valid_index][2];
-        d.p4 = fourPointModel[valid_index][3];
+        d.p1 = fourPointModel[idx][0];
+        d.p2 = fourPointModel[idx][1];
+        d.p3 = fourPointModel[idx][2];
+        d.p4 = fourPointModel[idx][3];
 
         d.center_point.x = (d.p1.x + d.p2.x + d.p3.x + d.p4.x) / 4;
         d.center_point.y = (d.p1.y + d.p2.y + d.p3.y + d.p4.y) / 4;
         // d.length = boxes[indices[valid_index]].width;
         // d.width = boxes[indices[valid_index]].height;
-        d.ID = num_class[indices[valid_index]];
+        d.ID = num_class[idx];
 
-        int color = color_class[indices[valid_index]];
+        int color = color_class[idx];
         if (color == 0){ d.color = Color::RED; }
         else if (color == 1){ d.color = Color::BLUE; }
         else { d.color = Color::NONE; }
