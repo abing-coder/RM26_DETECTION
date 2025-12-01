@@ -65,10 +65,23 @@ void DetectionArmor::clearHeap()
     cap.release();
     cv::destroyAllWindows();
 }
+//相机内参矩阵
+std::array<double, 9> cam = {
+  1316.14668, 0.0, 404.611275,      // fx, 0, cx
+  0.0, 2331.900737, 479.632969,      // 0, fy, cy
+  0.0, 0.0, 1.0            // 0, 0, 1
+};
+//畸变系数
+std::vector<double>dist = {
+  -0.067747, 0.457597, -0.012864, 0.008457, 0.000000
+};
+PnPSolver solver(cam, dist);
+
+
 
 Detector::LightParams l_params; 
 Detector::ArmorParams a_params;
-Detector detector(100,l_params,a_params); 
+Detector detector(200,l_params,a_params); 
 void get_roi(Mat& image,vector<Point>& points,Mat& ROI)
 { 
     cv::Mat mask = Mat::zeros(image.size(), CV_8UC1);
@@ -76,7 +89,7 @@ void get_roi(Mat& image,vector<Point>& points,Mat& ROI)
     Point rb = points[2];  // 右下角
     Point lb = points[1];  // 左下角
     Point rt = points[3];  // 右上角
-    cv::polylines(image, std::vector<Point>{lt, rt, rb, lb}, true, Scalar(255, 0, 0), 2);
+    // cv::polylines(image, std::vector<Point>{lt, rt, rb, lb}, true, Scalar(255, 0, 0), 2);
     std::vector<cv::Point> roi_points = {lt, rt, rb, lb}; 
     cv::fillConvexPoly(mask, roi_points,Scalar(255,0,0));
     cv::bitwise_and(image, image,ROI, mask);
@@ -86,8 +99,10 @@ void DetectionArmor::drawObject(Mat& image,const vector<ArmorData>& datas)
     // 绘制装甲板的边界框
     //std::vector<Point> points = {d.p1, d.p2, d.p3, d.p4};
     std::cout << "datas: " << datas.size() << endl;
+    cv::Point2f left_top, right_bottom, left_bottom, right_top;
     for(const ArmorData& d : datas)
     {
+        cv::Mat rev,tvc;
         cv::Point lt = cv::Point(d.p1.x-20, d.p1.y-20);  // 左上角
         cv::Point rb = cv::Point(d.p3.x+20, d.p3.y+20);  // 右下角
         cv::Point lb = cv::Point(d.p2.x-20, d.p2.y+20);  // 左下角
@@ -95,9 +110,33 @@ void DetectionArmor::drawObject(Mat& image,const vector<ArmorData>& datas)
         std::vector<Point> points = {lt, rt, rb, lb};
         Mat ROI;
         get_roi(image,points,ROI);
-        cv::imshow("ROI", ROI);
-        detector.detect(ROI);
+        //cv::imshow("ROI", ROI);
+        auto armor = detector.detect(ROI);
+        
+        if (armor.empty()) {
+            continue; 
+        }
+        
+        // pnp
+        left_top = armor[0].left_light.top;
+        right_bottom = armor[0].right_light.bottom;
+        left_bottom = armor[0].left_light.bottom;
+        right_top = armor[0].right_light.top;
+        std::cout << "type" << static_cast<int>(armor[0].type) << std::endl;
+        solver.solvePnP(armor[0],rev,tvc);
+        cout << "rev :" << rev << endl;
+        cout << "tev :"  << tvc << endl;
+
+        // 获取欧拉角
+        double yaw, pitch, roll;
+        solver.rvecToEuler(rev, pitch, yaw, roll);
+        cout << "yaw: " << yaw << " pitch: " << pitch << " roll: " << roll << endl;
+
+        cout << "Distance: " << solver.calculateDistance(tvc) << "m" << endl;
+
+                 
         detector.drawResults(image);
+        
     }
     
 

@@ -1243,4 +1243,5 @@ CMakeFiles/detection.dir/src/yolo_detection.cpp.o: \
   /Users/abing/detection/./Eigen/src/Eigenvalues/./RealQZ.h \
   /Users/abing/detection/./Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
   /Users/abing/detection/./include/traditional_detector.hpp \
-  /Users/abing/detection/./include/armor.hpp
+  /Users/abing/detection/./include/armor.hpp \
+  /Users/abing/detection/./include/pnp.hpp

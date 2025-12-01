@@ -1243,6 +1243,7 @@ CMakeFiles/detection.dir/main.cpp.o: /Users/abing/detection/main.cpp \
   /Users/abing/detection/./Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
   /Users/abing/detection/./include/traditional_detector.hpp \
   /Users/abing/detection/./include/armor.hpp \
+  /Users/abing/detection/./include/pnp.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/random \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/bernoulli_distribution.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1/__random/uniform_real_distribution.h \

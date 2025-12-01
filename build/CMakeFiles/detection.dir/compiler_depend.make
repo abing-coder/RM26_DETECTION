@@ -5550,6 +5550,7 @@ CMakeFiles/detection.dir/main.cpp.o: /Users/abing/detection/main.cpp \
   /Users/abing/detection/TrackerHeader/dataType.h \
   /Users/abing/detection/TrackerHeader/kalmanFilter.h \
   /Users/abing/detection/include/armor.hpp \
+  /Users/abing/detection/include/pnp.hpp \
   /Users/abing/detection/include/traditional_detector.hpp \
   /Users/abing/detection/include/yolo_detection.hpp \
   /opt/homebrew/Cellar/opencv/4.12.0_12/include/opencv4/opencv2/imgproc/segmentation.hpp \
@@ -7722,6 +7723,7 @@ CMakeFiles/detection.dir/src/traditional_detector.cpp.o: /Users/abing/detection/
   /Users/abing/detection/TrackerHeader/dataType.h \
   /Users/abing/detection/TrackerHeader/kalmanFilter.h \
   /Users/abing/detection/include/armor.hpp \
+  /Users/abing/detection/include/pnp.hpp \
   /Users/abing/detection/include/traditional_detector.hpp \
   /Users/abing/detection/include/yolo_detection.hpp \
   /opt/homebrew/Cellar/opencv/4.12.0_12/include/opencv4/opencv2/imgproc/segmentation.hpp \
@@ -8969,6 +8971,7 @@ CMakeFiles/detection.dir/src/yolo_detection.cpp.o: /Users/abing/detection/src/yo
   /Users/abing/detection/TrackerHeader/dataType.h \
   /Users/abing/detection/TrackerHeader/kalmanFilter.h \
   /Users/abing/detection/include/armor.hpp \
+  /Users/abing/detection/include/pnp.hpp \
   /Users/abing/detection/include/traditional_detector.hpp \
   /Users/abing/detection/include/yolo_detection.hpp \
   /opt/homebrew/Cellar/opencv/4.12.0_12/include/opencv4/opencv2/imgproc/segmentation.hpp \
@@ -9172,8 +9175,6 @@ CMakeFiles/detection.dir/src/yolo_detection.cpp.o: /Users/abing/detection/src/yo
 
 /Users/abing/detection/src/traditional_detector.cpp:
 
-/Users/abing/detection/include/pnp.hpp:
-
 /Users/abing/detection/src/pnp.cpp:
 
 /opt/homebrew/include/openvino/runtime/remote_tensor.hpp:
@@ -9251,6 +9252,8 @@ CMakeFiles/detection.dir/src/yolo_detection.cpp.o: /Users/abing/detection/src/yo
 /opt/homebrew/include/openvino/core/coordinate.hpp:
 
 /Users/abing/detection/include/yolo_detection.hpp:
+
+/Users/abing/detection/include/pnp.hpp:
 
 /Users/abing/detection/include/armor.hpp:
 

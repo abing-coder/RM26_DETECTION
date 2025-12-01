@@ -1,16 +1,9 @@
 #include "pnp.hpp"
 
 //相机内参矩阵
-std::array<double, 9> camera_matrix = {
-  1400.0, 0.0, 640.0,      // fx, 0, cx
-  0.0, 1400.0, 360.0,      // 0, fy, cy
-  0.0, 0.0, 1.0            // 0, 0, 1
-};
+std::array<double, 9> camera_matrix;
 //畸变系数
-std::vector<double>dist_coeffs = {
-  0.0, 0.0, 0.0, 0.0, 0.0
-};
-
+std::vector<double>dist_coeffs;
 
 PnPSolver::PnPSolver(
   const std::array<double, 9> & camera_matrix, const std::vector<double> & dist_coeffs)
@@ -60,3 +53,28 @@ float PnPSolver::calculateDistanceToCenter(const cv::Point2f & image_point)
   return cv::norm(image_point - cv::Point2f(cx, cy));
 }
 
+// 旋转向量转欧拉角
+void PnPSolver::rvecToEuler(const cv::Mat& rvec, double& pitch, double& yaw, double& roll) {
+    cv::Mat rotMat;
+    cv::Rodrigues(rvec, rotMat); // 旋转向量 -> 旋转矩阵
+    // 计算 yaw (绕 Y 轴)
+    yaw = asin(-rotMat.at<double>(2, 0));
+    // 计算 pitch (绕 X 轴) 和 roll (绕 Z 轴)
+    if (cos(yaw) > 1e-6) { 
+        pitch = atan2(rotMat.at<double>(2, 1), rotMat.at<double>(2, 2));
+        roll = atan2(rotMat.at<double>(1, 0), rotMat.at<double>(0, 0));
+    } else {
+        // 特殊情况：当 yaw 为 ±90 度时
+        pitch = 0.0;
+        roll = atan2(-rotMat.at<double>(0, 1), rotMat.at<double>(1, 1));
+    }
+}
+ 
+// 计算距离
+double PnPSolver::calculateDistance(const cv::Mat& tvec) {
+    double tx = tvec.at<double>(0);
+    double ty = tvec.at<double>(1);
+    double tz = tvec.at<double>(2);
+    
+    return sqrt(tx*tx + ty*ty + tz*tz); //单位：米
+}

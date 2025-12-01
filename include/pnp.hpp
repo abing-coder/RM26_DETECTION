@@ -20,6 +20,12 @@ public:
   // Calculate the distance between armor center and image center
   float calculateDistanceToCenter(const cv::Point2f & image_point); // 计算装甲板中心到图像中心的距离
 
+  // 计算欧拉角
+  void rvecToEuler(const cv::Mat& rvec, double& pitch, double& yaw, double& roll);
+
+  // 计算距离
+  double calculateDistance(const cv::Mat& tvec);
+
 private:
   cv::Mat camera_matrix_;
   cv::Mat dist_coeffs_;

@@ -10,7 +10,7 @@
 #include <string>
 int main(int argc, char** argv)
 {
-    std::string video_path = "/Users/abing/detection/video/8.mp4";
+    std::string video_path = "/Users/abing/detection/video/xj3.mp4";
     std::string model_path = "/Users/abing/detection/model/new.onnx";
     detection::DetectionArmor detectionArmor(model_path, true,video_path);
 

@@ -1243,4 +1243,5 @@ CMakeFiles/detection.dir/src/traditional_detector.cpp.o: \
   /Users/abing/detection/./Eigen/src/Eigenvalues/RealQZ.h \
   /Users/abing/detection/./Eigen/src/Eigenvalues/GeneralizedEigenSolver.h \
   /Users/abing/detection/./Eigen/src/Eigenvalues/./RealQZ.h \
-  /Users/abing/detection/./Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h
+  /Users/abing/detection/./Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h \
+  /Users/abing/detection/./include/pnp.hpp

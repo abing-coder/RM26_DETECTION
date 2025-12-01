@@ -262,11 +262,11 @@ void Detector::drawResults(cv::Mat & img)
   }
 
   // Show numbers and confidence
-  for (const auto & armor : armors_) {
-    cv::putText(
-      img, armor.classfication_result, armor.left_light.top, cv::FONT_HERSHEY_SIMPLEX, 0.8,
-      cv::Scalar(0, 255, 255), 2);
-  }
+  // for (const auto & armor : armors_) {
+  //   cv::putText(
+  //     img, armor.classfication_result, armor.left_light.top, cv::FONT_HERSHEY_SIMPLEX, 0.8,
+  //     cv::Scalar(0, 255, 255), 2);
+  // }
 
 }
 std::vector<Armor> Detector::detect(const cv::Mat & input)

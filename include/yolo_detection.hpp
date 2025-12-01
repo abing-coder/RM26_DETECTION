@@ -11,6 +11,7 @@
 #include "BYTETracker.h"
 #include "traditional_detector.hpp"
 #include "armor.hpp"
+#include "pnp.hpp"
 
 #define __TEST__
 
