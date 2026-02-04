@@ -79,6 +79,9 @@ namespace detection
     //数据就绪状态
     std::atomic<bool> data_ready{false};
 
+    // 当前帧的延迟（毫秒）
+    double current_latency_ms = 0.0;
+
     public:
         // 指定识别的颜色
         static int detect_color; // 0: 红色，1: 蓝色

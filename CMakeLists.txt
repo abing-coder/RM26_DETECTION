@@ -12,6 +12,7 @@ find_package(Eigen3 REQUIRED)
 include_directories(
     ${OpenCV_INCLUDE_DIRS} 
     ${OpenVINO_INCLUDE_DIRS}
+    ${EIGEN3_INCLUDE_DIR}
 )
 
 include_directories(./include)
@@ -30,6 +31,7 @@ target_include_directories(${PROJECT_NAME} PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/include 
     ${OpenCV_INCLUDE_DIRS}
     ${OpenVINO_LIBRARIES}
+    ${EIGEN3_INCLUDE_DIR}
 )
 
 target_link_libraries(${PROJECT_NAME} PRIVATE

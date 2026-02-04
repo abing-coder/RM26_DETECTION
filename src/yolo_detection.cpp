@@ -1,4 +1,6 @@
 #include "yolo_detection.hpp"
+#include "tracker.h"
+#include "ArmorBox.h"
 
 using namespace detection;
 
@@ -151,9 +153,19 @@ inline double DetectionArmor::sigmoid(double x)
     return (1 / (1 + exp(-x)));
 }
 
+rm::Tracker tracker_car;
+int64 timestamp = 0;    // 相机时间戳ms
+int64 cvTickCount = 0;
+float absyaw = 0, abspitch = 0;    
+int bullet_speed = 30, targetNum = 0;   
 void DetectionArmor::run()
 {
     size_t frame_count = 0;
+    tracker_car.solver.setCameraParam("/Users/abing/detection/camera/camera_params.xml");
+    tracker_car.solver.setArmorSize(SMALL_ARMOR, 0.135, 0.055);
+    tracker_car.solver.setArmorSize(BIG_ARMOR, 0.230, 0.055);
+    tracker_car.setTargetNum(targetNum);
+    tracker_car.setBulletSpeed(bullet_speed);
 
     while (1) 
     {
@@ -172,7 +184,7 @@ void DetectionArmor::run()
             cap.set(cv::CAP_PROP_POS_FRAMES, 0);
         }
         auto end = std::chrono::high_resolution_clock::now();
-        std::cout << "FPS: " << 1000.0 / std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count() << std::endl;
+        current_latency_ms = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
         showImage();
 
         if (cv::waitKey(120) == 27)
@@ -377,18 +389,19 @@ void __TEST__ DetectionArmor::showImage()
     {
         std::cout << getdata().size() << std::endl;
         
-        // for (auto i : getdata()) 
-        // {
-        //     drawObject(img, i); // 绘制检测结果
-        // }
+        // 在图像上绘制延迟信息
+        if (current_latency_ms > 0.0) {
+            char latency_str[32];
+            snprintf(latency_str, sizeof(latency_str), "Latency: %.1f ms", current_latency_ms);
+            cv::putText(img, latency_str, cv::Point(10, 30), 
+                        cv::FONT_HERSHEY_SIMPLEX, 0.7, cv::Scalar(0, 255, 0), 2);
+        }
         drawObject(img, getdata());
-        //drawTracks(img); // 绘制跟踪轨迹
-
-        //cv::imshow("Detection Armor", img); // 显示图像
-        // format_print_data_test();
+        
+       
     }
 
-    // std::lock_guard<std::mutex> lock(_mtx);
+    
 }
 
 void __TEST__ DetectionArmor::format_print_data_test()

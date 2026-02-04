@@ -273,6 +273,78 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/detection.dir/build.make CMakeFiles/detection.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+src/AngleSolver.o: src/AngleSolver.cpp.o
+.PHONY : src/AngleSolver.o
+
+# target to build an object file
+src/AngleSolver.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/detection.dir/build.make CMakeFiles/detection.dir/src/AngleSolver.cpp.o
+.PHONY : src/AngleSolver.cpp.o
+
+src/AngleSolver.i: src/AngleSolver.cpp.i
+.PHONY : src/AngleSolver.i
+
+# target to preprocess a source file
+src/AngleSolver.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/detection.dir/build.make CMakeFiles/detection.dir/src/AngleSolver.cpp.i
+.PHONY : src/AngleSolver.cpp.i
+
+src/AngleSolver.s: src/AngleSolver.cpp.s
+.PHONY : src/AngleSolver.s
+
+# target to generate assembly for a file
+src/AngleSolver.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/detection.dir/build.make CMakeFiles/detection.dir/src/AngleSolver.cpp.s
+.PHONY : src/AngleSolver.cpp.s
+
+src/ArmorBox.o: src/ArmorBox.cpp.o
+.PHONY : src/ArmorBox.o
+
+# target to build an object file
+src/ArmorBox.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/detection.dir/build.make CMakeFiles/detection.dir/src/ArmorBox.cpp.o
+.PHONY : src/ArmorBox.cpp.o
+
+src/ArmorBox.i: src/ArmorBox.cpp.i
+.PHONY : src/ArmorBox.i
+
+# target to preprocess a source file
+src/ArmorBox.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/detection.dir/build.make CMakeFiles/detection.dir/src/ArmorBox.cpp.i
+.PHONY : src/ArmorBox.cpp.i
+
+src/ArmorBox.s: src/ArmorBox.cpp.s
+.PHONY : src/ArmorBox.s
+
+# target to generate assembly for a file
+src/ArmorBox.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/detection.dir/build.make CMakeFiles/detection.dir/src/ArmorBox.cpp.s
+.PHONY : src/ArmorBox.cpp.s
+
+src/kalman_filter.o: src/kalman_filter.cpp.o
+.PHONY : src/kalman_filter.o
+
+# target to build an object file
+src/kalman_filter.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/detection.dir/build.make CMakeFiles/detection.dir/src/kalman_filter.cpp.o
+.PHONY : src/kalman_filter.cpp.o
+
+src/kalman_filter.i: src/kalman_filter.cpp.i
+.PHONY : src/kalman_filter.i
+
+# target to preprocess a source file
+src/kalman_filter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/detection.dir/build.make CMakeFiles/detection.dir/src/kalman_filter.cpp.i
+.PHONY : src/kalman_filter.cpp.i
+
+src/kalman_filter.s: src/kalman_filter.cpp.s
+.PHONY : src/kalman_filter.s
+
+# target to generate assembly for a file
+src/kalman_filter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/detection.dir/build.make CMakeFiles/detection.dir/src/kalman_filter.cpp.s
+.PHONY : src/kalman_filter.cpp.s
+
 src/pnp.o: src/pnp.cpp.o
 .PHONY : src/pnp.o
 
@@ -296,6 +368,30 @@ src/pnp.s: src/pnp.cpp.s
 src/pnp.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/detection.dir/build.make CMakeFiles/detection.dir/src/pnp.cpp.s
 .PHONY : src/pnp.cpp.s
+
+src/tracker.o: src/tracker.cpp.o
+.PHONY : src/tracker.o
+
+# target to build an object file
+src/tracker.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/detection.dir/build.make CMakeFiles/detection.dir/src/tracker.cpp.o
+.PHONY : src/tracker.cpp.o
+
+src/tracker.i: src/tracker.cpp.i
+.PHONY : src/tracker.i
+
+# target to preprocess a source file
+src/tracker.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/detection.dir/build.make CMakeFiles/detection.dir/src/tracker.cpp.i
+.PHONY : src/tracker.cpp.i
+
+src/tracker.s: src/tracker.cpp.s
+.PHONY : src/tracker.s
+
+# target to generate assembly for a file
+src/tracker.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/detection.dir/build.make CMakeFiles/detection.dir/src/tracker.cpp.s
+.PHONY : src/tracker.cpp.s
 
 src/traditional_detector.o: src/traditional_detector.cpp.o
 .PHONY : src/traditional_detector.o
@@ -372,9 +468,21 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... src/AngleSolver.o"
+	@echo "... src/AngleSolver.i"
+	@echo "... src/AngleSolver.s"
+	@echo "... src/ArmorBox.o"
+	@echo "... src/ArmorBox.i"
+	@echo "... src/ArmorBox.s"
+	@echo "... src/kalman_filter.o"
+	@echo "... src/kalman_filter.i"
+	@echo "... src/kalman_filter.s"
 	@echo "... src/pnp.o"
 	@echo "... src/pnp.i"
 	@echo "... src/pnp.s"
+	@echo "... src/tracker.o"
+	@echo "... src/tracker.i"
+	@echo "... src/tracker.s"
 	@echo "... src/traditional_detector.o"
 	@echo "... src/traditional_detector.i"
 	@echo "... src/traditional_detector.s"

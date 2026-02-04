@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<opencv_storage>
+
+<!-- 相机参数设置 -->
+<!-- Integer整数类型: Width宽度 Height高度 为零或小于最小值时则设置为最大值 -->
+<Width>0</Width>
+<Height>0</Height>
+
+<!-- Integer整数类型: OffsetX水平偏移 OffsetY垂直偏移 -->
+<OffsetX>0</OffsetX>
+<OffsetY>0</OffsetY>
+
+<!-- Boolean布尔类型: ReverseX水平镜像 ReverseY垂直镜像 -->
+<ReverseX>1</ReverseX>
+<ReverseY>1</ReverseY>
+
+<!-- Float浮点数类型: ExposureTime曝光时间(us) Gain增益(dB) -->
+<ExposureTime>1000</ExposureTime>
+<Gain>20.0322</Gain>
+
+<!-- Integer整数类型: 红蓝通道互减二值化阈值 -->
+<ColorThreshold>45</ColorThreshold>
+
+<!-- 相机系下相机镜头中心与枪管的偏移量，单位mm -->
+<X_GUN_AND_CAM>0.</X_GUN_AND_CAM>
+<Y_GUN_AND_CAM>-0.04</Y_GUN_AND_CAM>
+<Z_GUN_AND_CAM>0.</Z_GUN_AND_CAM>
+
+<!-- 相机内参和畸变参数 -->
+<CAMERA_MATRIX type_id="opencv-matrix">
+  <rows>3</rows>
+  <cols>3</cols>
+  <dt>d</dt>
+  <data>
+    9.3988165117387587e+02 0. 3.5950000000000000e+02 0.
+    9.3988165117387587e+02 2.6950000000000000e+02 0. 0. 1.</data></CAMERA_MATRIX>
+
+<DISTORTION_COEFF type_id="opencv-matrix">
+  <rows>5</rows>
+  <cols>1</cols>
+  <dt>d</dt>
+  <data>
+    -1.4150547641242703e-01 9.2685014767222040e-01 0. 0.
+    -2.3058504127363149e+00</data></DISTORTION_COEFF>
+    
+</opencv_storage>

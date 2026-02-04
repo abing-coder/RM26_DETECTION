@@ -14,7 +14,11 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/abing/detection/TrackerSource/lapjv.cpp" "CMakeFiles/detection.dir/TrackerSource/lapjv.cpp.o" "gcc" "CMakeFiles/detection.dir/TrackerSource/lapjv.cpp.o.d"
   "/Users/abing/detection/TrackerSource/utils.cpp" "CMakeFiles/detection.dir/TrackerSource/utils.cpp.o" "gcc" "CMakeFiles/detection.dir/TrackerSource/utils.cpp.o.d"
   "/Users/abing/detection/main.cpp" "CMakeFiles/detection.dir/main.cpp.o" "gcc" "CMakeFiles/detection.dir/main.cpp.o.d"
+  "/Users/abing/detection/src/AngleSolver.cpp" "CMakeFiles/detection.dir/src/AngleSolver.cpp.o" "gcc" "CMakeFiles/detection.dir/src/AngleSolver.cpp.o.d"
+  "/Users/abing/detection/src/ArmorBox.cpp" "CMakeFiles/detection.dir/src/ArmorBox.cpp.o" "gcc" "CMakeFiles/detection.dir/src/ArmorBox.cpp.o.d"
+  "/Users/abing/detection/src/kalman_filter.cpp" "CMakeFiles/detection.dir/src/kalman_filter.cpp.o" "gcc" "CMakeFiles/detection.dir/src/kalman_filter.cpp.o.d"
   "/Users/abing/detection/src/pnp.cpp" "CMakeFiles/detection.dir/src/pnp.cpp.o" "gcc" "CMakeFiles/detection.dir/src/pnp.cpp.o.d"
+  "/Users/abing/detection/src/tracker.cpp" "CMakeFiles/detection.dir/src/tracker.cpp.o" "gcc" "CMakeFiles/detection.dir/src/tracker.cpp.o.d"
   "/Users/abing/detection/src/traditional_detector.cpp" "CMakeFiles/detection.dir/src/traditional_detector.cpp.o" "gcc" "CMakeFiles/detection.dir/src/traditional_detector.cpp.o.d"
   "/Users/abing/detection/src/yolo_detection.cpp" "CMakeFiles/detection.dir/src/yolo_detection.cpp.o" "gcc" "CMakeFiles/detection.dir/src/yolo_detection.cpp.o.d"
   )
