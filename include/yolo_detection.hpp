@@ -93,7 +93,7 @@ namespace detection
 
         BYTETracker tracker = BYTETracker(10, 10); // 初始化BYTETracker
 
-        static void drawObject(Mat& image, const vector<ArmorData>& datas);
+        void drawObject(Mat& image, const vector<ArmorData>& datas);
         static double sigmoid(double x);
 
         void start_detection();

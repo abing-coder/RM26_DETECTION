@@ -4,8 +4,13 @@
 
 using namespace detection;
 
-int detection::DetectionArmor::detect_color = 0; // 0: 红色，1: 蓝色
+int detection::DetectionArmor::detect_color = 1; // 0: 红色，1: 蓝色
 
+rm::Tracker tracker_car;
+int64 timestamp = 0;    // 相机时间戳ms
+int64 cvTickCount = 0;
+float absyaw = 0, abspitch = 0;    
+int bullet_speed = 24, targetNum = 0;   
 bool setThreadPriority(std::thread& thread, int priority) {
     pthread_t pthread = thread.native_handle();
     
@@ -29,7 +34,21 @@ bool setThreadPriority(std::thread& thread, int priority) {
     
     return true;
 }
+std::vector<ArmorBox> ToArmorBox(const std::vector<ArmorData> &armors_data){
+    vector<ArmorBox> armors;
+    for(auto armor_data : armors_data){
+        ArmorBox armor;
+        armor.center = armor_data.center_point;
+        armor.armorNum = armor_data.ID;
+        armor.armorVertices_[0] = armor_data.p1;
+        armor.armorVertices_[1] = armor_data.p2;
+        armor.armorVertices_[2] = armor_data.p3;
+        armor.armorVertices_[3] = armor_data.p4;
 
+        armors.push_back(armor);
+    }
+    return armors;
+}
 DetectionArmor::DetectionArmor(string& model_path, bool ifcountTime, string video_path)
     : ifCountTime(ifcountTime)
 {
@@ -100,6 +119,7 @@ void DetectionArmor::drawObject(Mat& image,const vector<ArmorData>& datas)
 {
     // 绘制装甲板的边界框
     //std::vector<Point> points = {d.p1, d.p2, d.p3, d.p4};
+    cv::Mat img_copy = image.clone();
     std::cout << "datas: " << datas.size() << endl;
     cv::Point2f left_top, right_bottom, left_bottom, right_top;
     for(const ArmorData& d : datas)
@@ -140,11 +160,34 @@ void DetectionArmor::drawObject(Mat& image,const vector<ArmorData>& datas)
         detector.drawResults(image);
         
     }
-    
-
+    // 在图像上绘制延迟信息
+    if (current_latency_ms > 0.0) {
+        char latency_str[32];
+        snprintf(latency_str, sizeof(latency_str), "Latency: %.1f ms", current_latency_ms);
+        cv::putText(image, latency_str, cv::Point(10, 30), cv::FONT_HERSHEY_SIMPLEX, 0.7, cv::Scalar(0, 255, 0), 2);
+    }
     cv::imshow("Detection", image);
 
-    // cv::rectangle(image, lt, rb, Scalar(0, 255, 0), 2);
+
+    // ********************** tracker_car ************ //
+    std::vector<ArmorBox> armors = ToArmorBox(datas);
+    // std::cout << "armorboxs: "<< armors[0].center <<endl;
+    cvTickCount = cv::getTickCount();
+    // 更新时间戳（毫秒）
+    timestamp = cv::getTickCount() / (cv::getTickFrequency() / 1000.0);
+    float addyaw = 0, addpitch = 0;
+    // 开火标志
+    int fire = 0;
+    bool state = tracker_car.run(img_copy, armors, timestamp, 
+        cvTickCount, absyaw, abspitch, 
+        addyaw, addpitch, fire
+    );
+
+    cv::Mat track_src = tracker_car.show(addyaw, addpitch, 0);
+    imshow("Track", track_src);
+
+    
+    
 
 }
 
@@ -153,11 +196,6 @@ inline double DetectionArmor::sigmoid(double x)
     return (1 / (1 + exp(-x)));
 }
 
-rm::Tracker tracker_car;
-int64 timestamp = 0;    // 相机时间戳ms
-int64 cvTickCount = 0;
-float absyaw = 0, abspitch = 0;    
-int bullet_speed = 30, targetNum = 0;   
 void DetectionArmor::run()
 {
     size_t frame_count = 0;
@@ -387,15 +425,7 @@ void __TEST__ DetectionArmor::showImage()
 {
     if (!img.empty()) 
     {
-        std::cout << getdata().size() << std::endl;
-        
-        // 在图像上绘制延迟信息
-        if (current_latency_ms > 0.0) {
-            char latency_str[32];
-            snprintf(latency_str, sizeof(latency_str), "Latency: %.1f ms", current_latency_ms);
-            cv::putText(img, latency_str, cv::Point(10, 30), 
-                        cv::FONT_HERSHEY_SIMPLEX, 0.7, cv::Scalar(0, 255, 0), 2);
-        }
+        std::cout << getdata().size() << std::endl;      
         drawObject(img, getdata());
         
        
