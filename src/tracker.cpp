@@ -550,7 +550,7 @@ cv::Mat Tracker::show(float add_yaw, float add_pitch, int width) {
         circle(srcImg, aim_point, 2, Scalar(255, 255, 255), 20);
     }
     std::stringstream latency_ss;
-    latency_ss << "Latency: " << std::fixed << std::setprecision(2) << useTime << "ms";
+    latency_ss << "Latency: " << std::fixed << std::setprecision(2) << useTime*100 << "ms";
     auto latency_s = latency_ss.str();
     putText(srcImg, latency_s, Point(10, 20), cv::FONT_HERSHEY_SIMPLEX, 0.8, cv::Scalar(0, 255, 0), 2);
     putText(srcImg, "Time: " + to_string(lastTimestamp) + "ms", Point(10, 50), FONT_HERSHEY_SIMPLEX, 0.8, Scalar(0, 255, 0), 2);

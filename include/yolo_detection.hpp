@@ -8,7 +8,6 @@
 #include <atomic>
 #include "timeCounter.hpp"
 #include <shared_mutex>
-#include "BYTETracker.h"
 #include "traditional_detector.hpp"
 #include "armor.hpp"
 #include "pnp.hpp"
@@ -64,8 +63,7 @@ namespace detection
     // 当前帧的装甲板数据
     vector<ArmorData> armorsDatas; 
 
-    std::vector<Object> detection_objects; // 要在容器里面存检测对象
-    std::vector<STrack> tracks_objects;
+   
 
     // 整个推理的线程
     thread infer_thread;
@@ -91,7 +89,6 @@ namespace detection
         DetectionArmor(string& model_path, bool ifCountTime, string video_path);
         ~DetectionArmor();
 
-        BYTETracker tracker = BYTETracker(10, 10); // 初始化BYTETracker
 
         void drawObject(Mat& image, const vector<ArmorData>& datas);
         static double sigmoid(double x);

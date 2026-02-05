@@ -1,79 +1,49 @@
 [
 {
   "directory": "/Users/abing/detection/build",
-  "command": "/usr/bin/clang++ -DOV_THREAD=OV_THREAD_TBB -I/opt/homebrew/include/eigen3 -I/Users/abing/detection/./include -I/Users/abing/detection/./TimeCounter -I/Users/abing/detection/./TrackerHeader -I/Users/abing/detection/./Eigen -I/Users/abing/detection/include -isystem /opt/homebrew/Cellar/opencv/4.12.0_12/include/opencv4 -isystem /opt/homebrew/include -g -std=gnu++17 -arch arm64 -Wno-error=deprecated-declarations -o CMakeFiles/detection.dir/main.cpp.o -c /Users/abing/detection/main.cpp",
+  "command": "/usr/bin/clang++ -DOV_THREAD=OV_THREAD_TBB -I/opt/homebrew/include/eigen3 -I/Users/abing/detection/./include -I/Users/abing/detection/./TimeCounter -I/Users/abing/detection/./Eigen -I/Users/abing/detection/include -isystem /opt/homebrew/Cellar/opencv/4.12.0_12/include/opencv4 -isystem /opt/homebrew/include -g -std=gnu++17 -arch arm64 -Wno-error=deprecated-declarations -o CMakeFiles/detection.dir/main.cpp.o -c /Users/abing/detection/main.cpp",
   "file": "/Users/abing/detection/main.cpp",
   "output": "CMakeFiles/detection.dir/main.cpp.o"
 },
 {
   "directory": "/Users/abing/detection/build",
-  "command": "/usr/bin/clang++ -DOV_THREAD=OV_THREAD_TBB -I/opt/homebrew/include/eigen3 -I/Users/abing/detection/./include -I/Users/abing/detection/./TimeCounter -I/Users/abing/detection/./TrackerHeader -I/Users/abing/detection/./Eigen -I/Users/abing/detection/include -isystem /opt/homebrew/Cellar/opencv/4.12.0_12/include/opencv4 -isystem /opt/homebrew/include -g -std=gnu++17 -arch arm64 -Wno-error=deprecated-declarations -o CMakeFiles/detection.dir/TrackerSource/BYTETracker.cpp.o -c /Users/abing/detection/TrackerSource/BYTETracker.cpp",
-  "file": "/Users/abing/detection/TrackerSource/BYTETracker.cpp",
-  "output": "CMakeFiles/detection.dir/TrackerSource/BYTETracker.cpp.o"
-},
-{
-  "directory": "/Users/abing/detection/build",
-  "command": "/usr/bin/clang++ -DOV_THREAD=OV_THREAD_TBB -I/opt/homebrew/include/eigen3 -I/Users/abing/detection/./include -I/Users/abing/detection/./TimeCounter -I/Users/abing/detection/./TrackerHeader -I/Users/abing/detection/./Eigen -I/Users/abing/detection/include -isystem /opt/homebrew/Cellar/opencv/4.12.0_12/include/opencv4 -isystem /opt/homebrew/include -g -std=gnu++17 -arch arm64 -Wno-error=deprecated-declarations -o CMakeFiles/detection.dir/TrackerSource/STrack.cpp.o -c /Users/abing/detection/TrackerSource/STrack.cpp",
-  "file": "/Users/abing/detection/TrackerSource/STrack.cpp",
-  "output": "CMakeFiles/detection.dir/TrackerSource/STrack.cpp.o"
-},
-{
-  "directory": "/Users/abing/detection/build",
-  "command": "/usr/bin/clang++ -DOV_THREAD=OV_THREAD_TBB -I/opt/homebrew/include/eigen3 -I/Users/abing/detection/./include -I/Users/abing/detection/./TimeCounter -I/Users/abing/detection/./TrackerHeader -I/Users/abing/detection/./Eigen -I/Users/abing/detection/include -isystem /opt/homebrew/Cellar/opencv/4.12.0_12/include/opencv4 -isystem /opt/homebrew/include -g -std=gnu++17 -arch arm64 -Wno-error=deprecated-declarations -o CMakeFiles/detection.dir/TrackerSource/kalmanFilter.cpp.o -c /Users/abing/detection/TrackerSource/kalmanFilter.cpp",
-  "file": "/Users/abing/detection/TrackerSource/kalmanFilter.cpp",
-  "output": "CMakeFiles/detection.dir/TrackerSource/kalmanFilter.cpp.o"
-},
-{
-  "directory": "/Users/abing/detection/build",
-  "command": "/usr/bin/clang++ -DOV_THREAD=OV_THREAD_TBB -I/opt/homebrew/include/eigen3 -I/Users/abing/detection/./include -I/Users/abing/detection/./TimeCounter -I/Users/abing/detection/./TrackerHeader -I/Users/abing/detection/./Eigen -I/Users/abing/detection/include -isystem /opt/homebrew/Cellar/opencv/4.12.0_12/include/opencv4 -isystem /opt/homebrew/include -g -std=gnu++17 -arch arm64 -Wno-error=deprecated-declarations -o CMakeFiles/detection.dir/TrackerSource/lapjv.cpp.o -c /Users/abing/detection/TrackerSource/lapjv.cpp",
-  "file": "/Users/abing/detection/TrackerSource/lapjv.cpp",
-  "output": "CMakeFiles/detection.dir/TrackerSource/lapjv.cpp.o"
-},
-{
-  "directory": "/Users/abing/detection/build",
-  "command": "/usr/bin/clang++ -DOV_THREAD=OV_THREAD_TBB -I/opt/homebrew/include/eigen3 -I/Users/abing/detection/./include -I/Users/abing/detection/./TimeCounter -I/Users/abing/detection/./TrackerHeader -I/Users/abing/detection/./Eigen -I/Users/abing/detection/include -isystem /opt/homebrew/Cellar/opencv/4.12.0_12/include/opencv4 -isystem /opt/homebrew/include -g -std=gnu++17 -arch arm64 -Wno-error=deprecated-declarations -o CMakeFiles/detection.dir/TrackerSource/utils.cpp.o -c /Users/abing/detection/TrackerSource/utils.cpp",
-  "file": "/Users/abing/detection/TrackerSource/utils.cpp",
-  "output": "CMakeFiles/detection.dir/TrackerSource/utils.cpp.o"
-},
-{
-  "directory": "/Users/abing/detection/build",
-  "command": "/usr/bin/clang++ -DOV_THREAD=OV_THREAD_TBB -I/opt/homebrew/include/eigen3 -I/Users/abing/detection/./include -I/Users/abing/detection/./TimeCounter -I/Users/abing/detection/./TrackerHeader -I/Users/abing/detection/./Eigen -I/Users/abing/detection/include -isystem /opt/homebrew/Cellar/opencv/4.12.0_12/include/opencv4 -isystem /opt/homebrew/include -g -std=gnu++17 -arch arm64 -Wno-error=deprecated-declarations -o CMakeFiles/detection.dir/src/AngleSolver.cpp.o -c /Users/abing/detection/src/AngleSolver.cpp",
+  "command": "/usr/bin/clang++ -DOV_THREAD=OV_THREAD_TBB -I/opt/homebrew/include/eigen3 -I/Users/abing/detection/./include -I/Users/abing/detection/./TimeCounter -I/Users/abing/detection/./Eigen -I/Users/abing/detection/include -isystem /opt/homebrew/Cellar/opencv/4.12.0_12/include/opencv4 -isystem /opt/homebrew/include -g -std=gnu++17 -arch arm64 -Wno-error=deprecated-declarations -o CMakeFiles/detection.dir/src/AngleSolver.cpp.o -c /Users/abing/detection/src/AngleSolver.cpp",
   "file": "/Users/abing/detection/src/AngleSolver.cpp",
   "output": "CMakeFiles/detection.dir/src/AngleSolver.cpp.o"
 },
 {
   "directory": "/Users/abing/detection/build",
-  "command": "/usr/bin/clang++ -DOV_THREAD=OV_THREAD_TBB -I/opt/homebrew/include/eigen3 -I/Users/abing/detection/./include -I/Users/abing/detection/./TimeCounter -I/Users/abing/detection/./TrackerHeader -I/Users/abing/detection/./Eigen -I/Users/abing/detection/include -isystem /opt/homebrew/Cellar/opencv/4.12.0_12/include/opencv4 -isystem /opt/homebrew/include -g -std=gnu++17 -arch arm64 -Wno-error=deprecated-declarations -o CMakeFiles/detection.dir/src/ArmorBox.cpp.o -c /Users/abing/detection/src/ArmorBox.cpp",
+  "command": "/usr/bin/clang++ -DOV_THREAD=OV_THREAD_TBB -I/opt/homebrew/include/eigen3 -I/Users/abing/detection/./include -I/Users/abing/detection/./TimeCounter -I/Users/abing/detection/./Eigen -I/Users/abing/detection/include -isystem /opt/homebrew/Cellar/opencv/4.12.0_12/include/opencv4 -isystem /opt/homebrew/include -g -std=gnu++17 -arch arm64 -Wno-error=deprecated-declarations -o CMakeFiles/detection.dir/src/ArmorBox.cpp.o -c /Users/abing/detection/src/ArmorBox.cpp",
   "file": "/Users/abing/detection/src/ArmorBox.cpp",
   "output": "CMakeFiles/detection.dir/src/ArmorBox.cpp.o"
 },
 {
   "directory": "/Users/abing/detection/build",
-  "command": "/usr/bin/clang++ -DOV_THREAD=OV_THREAD_TBB -I/opt/homebrew/include/eigen3 -I/Users/abing/detection/./include -I/Users/abing/detection/./TimeCounter -I/Users/abing/detection/./TrackerHeader -I/Users/abing/detection/./Eigen -I/Users/abing/detection/include -isystem /opt/homebrew/Cellar/opencv/4.12.0_12/include/opencv4 -isystem /opt/homebrew/include -g -std=gnu++17 -arch arm64 -Wno-error=deprecated-declarations -o CMakeFiles/detection.dir/src/kalman_filter.cpp.o -c /Users/abing/detection/src/kalman_filter.cpp",
+  "command": "/usr/bin/clang++ -DOV_THREAD=OV_THREAD_TBB -I/opt/homebrew/include/eigen3 -I/Users/abing/detection/./include -I/Users/abing/detection/./TimeCounter -I/Users/abing/detection/./Eigen -I/Users/abing/detection/include -isystem /opt/homebrew/Cellar/opencv/4.12.0_12/include/opencv4 -isystem /opt/homebrew/include -g -std=gnu++17 -arch arm64 -Wno-error=deprecated-declarations -o CMakeFiles/detection.dir/src/kalman_filter.cpp.o -c /Users/abing/detection/src/kalman_filter.cpp",
   "file": "/Users/abing/detection/src/kalman_filter.cpp",
   "output": "CMakeFiles/detection.dir/src/kalman_filter.cpp.o"
 },
 {
   "directory": "/Users/abing/detection/build",
-  "command": "/usr/bin/clang++ -DOV_THREAD=OV_THREAD_TBB -I/opt/homebrew/include/eigen3 -I/Users/abing/detection/./include -I/Users/abing/detection/./TimeCounter -I/Users/abing/detection/./TrackerHeader -I/Users/abing/detection/./Eigen -I/Users/abing/detection/include -isystem /opt/homebrew/Cellar/opencv/4.12.0_12/include/opencv4 -isystem /opt/homebrew/include -g -std=gnu++17 -arch arm64 -Wno-error=deprecated-declarations -o CMakeFiles/detection.dir/src/pnp.cpp.o -c /Users/abing/detection/src/pnp.cpp",
+  "command": "/usr/bin/clang++ -DOV_THREAD=OV_THREAD_TBB -I/opt/homebrew/include/eigen3 -I/Users/abing/detection/./include -I/Users/abing/detection/./TimeCounter -I/Users/abing/detection/./Eigen -I/Users/abing/detection/include -isystem /opt/homebrew/Cellar/opencv/4.12.0_12/include/opencv4 -isystem /opt/homebrew/include -g -std=gnu++17 -arch arm64 -Wno-error=deprecated-declarations -o CMakeFiles/detection.dir/src/pnp.cpp.o -c /Users/abing/detection/src/pnp.cpp",
   "file": "/Users/abing/detection/src/pnp.cpp",
   "output": "CMakeFiles/detection.dir/src/pnp.cpp.o"
 },
 {
   "directory": "/Users/abing/detection/build",
-  "command": "/usr/bin/clang++ -DOV_THREAD=OV_THREAD_TBB -I/opt/homebrew/include/eigen3 -I/Users/abing/detection/./include -I/Users/abing/detection/./TimeCounter -I/Users/abing/detection/./TrackerHeader -I/Users/abing/detection/./Eigen -I/Users/abing/detection/include -isystem /opt/homebrew/Cellar/opencv/4.12.0_12/include/opencv4 -isystem /opt/homebrew/include -g -std=gnu++17 -arch arm64 -Wno-error=deprecated-declarations -o CMakeFiles/detection.dir/src/tracker.cpp.o -c /Users/abing/detection/src/tracker.cpp",
+  "command": "/usr/bin/clang++ -DOV_THREAD=OV_THREAD_TBB -I/opt/homebrew/include/eigen3 -I/Users/abing/detection/./include -I/Users/abing/detection/./TimeCounter -I/Users/abing/detection/./Eigen -I/Users/abing/detection/include -isystem /opt/homebrew/Cellar/opencv/4.12.0_12/include/opencv4 -isystem /opt/homebrew/include -g -std=gnu++17 -arch arm64 -Wno-error=deprecated-declarations -o CMakeFiles/detection.dir/src/tracker.cpp.o -c /Users/abing/detection/src/tracker.cpp",
   "file": "/Users/abing/detection/src/tracker.cpp",
   "output": "CMakeFiles/detection.dir/src/tracker.cpp.o"
 },
 {
   "directory": "/Users/abing/detection/build",
-  "command": "/usr/bin/clang++ -DOV_THREAD=OV_THREAD_TBB -I/opt/homebrew/include/eigen3 -I/Users/abing/detection/./include -I/Users/abing/detection/./TimeCounter -I/Users/abing/detection/./TrackerHeader -I/Users/abing/detection/./Eigen -I/Users/abing/detection/include -isystem /opt/homebrew/Cellar/opencv/4.12.0_12/include/opencv4 -isystem /opt/homebrew/include -g -std=gnu++17 -arch arm64 -Wno-error=deprecated-declarations -o CMakeFiles/detection.dir/src/traditional_detector.cpp.o -c /Users/abing/detection/src/traditional_detector.cpp",
+  "command": "/usr/bin/clang++ -DOV_THREAD=OV_THREAD_TBB -I/opt/homebrew/include/eigen3 -I/Users/abing/detection/./include -I/Users/abing/detection/./TimeCounter -I/Users/abing/detection/./Eigen -I/Users/abing/detection/include -isystem /opt/homebrew/Cellar/opencv/4.12.0_12/include/opencv4 -isystem /opt/homebrew/include -g -std=gnu++17 -arch arm64 -Wno-error=deprecated-declarations -o CMakeFiles/detection.dir/src/traditional_detector.cpp.o -c /Users/abing/detection/src/traditional_detector.cpp",
   "file": "/Users/abing/detection/src/traditional_detector.cpp",
   "output": "CMakeFiles/detection.dir/src/traditional_detector.cpp.o"
 },
 {
   "directory": "/Users/abing/detection/build",
-  "command": "/usr/bin/clang++ -DOV_THREAD=OV_THREAD_TBB -I/opt/homebrew/include/eigen3 -I/Users/abing/detection/./include -I/Users/abing/detection/./TimeCounter -I/Users/abing/detection/./TrackerHeader -I/Users/abing/detection/./Eigen -I/Users/abing/detection/include -isystem /opt/homebrew/Cellar/opencv/4.12.0_12/include/opencv4 -isystem /opt/homebrew/include -g -std=gnu++17 -arch arm64 -Wno-error=deprecated-declarations -o CMakeFiles/detection.dir/src/yolo_detection.cpp.o -c /Users/abing/detection/src/yolo_detection.cpp",
+  "command": "/usr/bin/clang++ -DOV_THREAD=OV_THREAD_TBB -I/opt/homebrew/include/eigen3 -I/Users/abing/detection/./include -I/Users/abing/detection/./TimeCounter -I/Users/abing/detection/./Eigen -I/Users/abing/detection/include -isystem /opt/homebrew/Cellar/opencv/4.12.0_12/include/opencv4 -isystem /opt/homebrew/include -g -std=gnu++17 -arch arm64 -Wno-error=deprecated-declarations -o CMakeFiles/detection.dir/src/yolo_detection.cpp.o -c /Users/abing/detection/src/yolo_detection.cpp",
   "file": "/Users/abing/detection/src/yolo_detection.cpp",
   "output": "CMakeFiles/detection.dir/src/yolo_detection.cpp.o"
 }

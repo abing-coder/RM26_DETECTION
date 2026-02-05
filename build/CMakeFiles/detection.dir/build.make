@@ -86,80 +86,10 @@ CMakeFiles/detection.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/detection.dir/main.cpp.s"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/abing/detection/main.cpp -o CMakeFiles/detection.dir/main.cpp.s
 
-CMakeFiles/detection.dir/TrackerSource/BYTETracker.cpp.o: CMakeFiles/detection.dir/flags.make
-CMakeFiles/detection.dir/TrackerSource/BYTETracker.cpp.o: /Users/abing/detection/TrackerSource/BYTETracker.cpp
-CMakeFiles/detection.dir/TrackerSource/BYTETracker.cpp.o: CMakeFiles/detection.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/abing/detection/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/detection.dir/TrackerSource/BYTETracker.cpp.o"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/detection.dir/TrackerSource/BYTETracker.cpp.o -MF CMakeFiles/detection.dir/TrackerSource/BYTETracker.cpp.o.d -o CMakeFiles/detection.dir/TrackerSource/BYTETracker.cpp.o -c /Users/abing/detection/TrackerSource/BYTETracker.cpp
-
-CMakeFiles/detection.dir/TrackerSource/BYTETracker.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/detection.dir/TrackerSource/BYTETracker.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/abing/detection/TrackerSource/BYTETracker.cpp > CMakeFiles/detection.dir/TrackerSource/BYTETracker.cpp.i
-
-CMakeFiles/detection.dir/TrackerSource/BYTETracker.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/detection.dir/TrackerSource/BYTETracker.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/abing/detection/TrackerSource/BYTETracker.cpp -o CMakeFiles/detection.dir/TrackerSource/BYTETracker.cpp.s
-
-CMakeFiles/detection.dir/TrackerSource/STrack.cpp.o: CMakeFiles/detection.dir/flags.make
-CMakeFiles/detection.dir/TrackerSource/STrack.cpp.o: /Users/abing/detection/TrackerSource/STrack.cpp
-CMakeFiles/detection.dir/TrackerSource/STrack.cpp.o: CMakeFiles/detection.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/abing/detection/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/detection.dir/TrackerSource/STrack.cpp.o"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/detection.dir/TrackerSource/STrack.cpp.o -MF CMakeFiles/detection.dir/TrackerSource/STrack.cpp.o.d -o CMakeFiles/detection.dir/TrackerSource/STrack.cpp.o -c /Users/abing/detection/TrackerSource/STrack.cpp
-
-CMakeFiles/detection.dir/TrackerSource/STrack.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/detection.dir/TrackerSource/STrack.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/abing/detection/TrackerSource/STrack.cpp > CMakeFiles/detection.dir/TrackerSource/STrack.cpp.i
-
-CMakeFiles/detection.dir/TrackerSource/STrack.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/detection.dir/TrackerSource/STrack.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/abing/detection/TrackerSource/STrack.cpp -o CMakeFiles/detection.dir/TrackerSource/STrack.cpp.s
-
-CMakeFiles/detection.dir/TrackerSource/kalmanFilter.cpp.o: CMakeFiles/detection.dir/flags.make
-CMakeFiles/detection.dir/TrackerSource/kalmanFilter.cpp.o: /Users/abing/detection/TrackerSource/kalmanFilter.cpp
-CMakeFiles/detection.dir/TrackerSource/kalmanFilter.cpp.o: CMakeFiles/detection.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/abing/detection/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/detection.dir/TrackerSource/kalmanFilter.cpp.o"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/detection.dir/TrackerSource/kalmanFilter.cpp.o -MF CMakeFiles/detection.dir/TrackerSource/kalmanFilter.cpp.o.d -o CMakeFiles/detection.dir/TrackerSource/kalmanFilter.cpp.o -c /Users/abing/detection/TrackerSource/kalmanFilter.cpp
-
-CMakeFiles/detection.dir/TrackerSource/kalmanFilter.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/detection.dir/TrackerSource/kalmanFilter.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/abing/detection/TrackerSource/kalmanFilter.cpp > CMakeFiles/detection.dir/TrackerSource/kalmanFilter.cpp.i
-
-CMakeFiles/detection.dir/TrackerSource/kalmanFilter.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/detection.dir/TrackerSource/kalmanFilter.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/abing/detection/TrackerSource/kalmanFilter.cpp -o CMakeFiles/detection.dir/TrackerSource/kalmanFilter.cpp.s
-
-CMakeFiles/detection.dir/TrackerSource/lapjv.cpp.o: CMakeFiles/detection.dir/flags.make
-CMakeFiles/detection.dir/TrackerSource/lapjv.cpp.o: /Users/abing/detection/TrackerSource/lapjv.cpp
-CMakeFiles/detection.dir/TrackerSource/lapjv.cpp.o: CMakeFiles/detection.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/abing/detection/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/detection.dir/TrackerSource/lapjv.cpp.o"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/detection.dir/TrackerSource/lapjv.cpp.o -MF CMakeFiles/detection.dir/TrackerSource/lapjv.cpp.o.d -o CMakeFiles/detection.dir/TrackerSource/lapjv.cpp.o -c /Users/abing/detection/TrackerSource/lapjv.cpp
-
-CMakeFiles/detection.dir/TrackerSource/lapjv.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/detection.dir/TrackerSource/lapjv.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/abing/detection/TrackerSource/lapjv.cpp > CMakeFiles/detection.dir/TrackerSource/lapjv.cpp.i
-
-CMakeFiles/detection.dir/TrackerSource/lapjv.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/detection.dir/TrackerSource/lapjv.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/abing/detection/TrackerSource/lapjv.cpp -o CMakeFiles/detection.dir/TrackerSource/lapjv.cpp.s
-
-CMakeFiles/detection.dir/TrackerSource/utils.cpp.o: CMakeFiles/detection.dir/flags.make
-CMakeFiles/detection.dir/TrackerSource/utils.cpp.o: /Users/abing/detection/TrackerSource/utils.cpp
-CMakeFiles/detection.dir/TrackerSource/utils.cpp.o: CMakeFiles/detection.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/abing/detection/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/detection.dir/TrackerSource/utils.cpp.o"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/detection.dir/TrackerSource/utils.cpp.o -MF CMakeFiles/detection.dir/TrackerSource/utils.cpp.o.d -o CMakeFiles/detection.dir/TrackerSource/utils.cpp.o -c /Users/abing/detection/TrackerSource/utils.cpp
-
-CMakeFiles/detection.dir/TrackerSource/utils.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/detection.dir/TrackerSource/utils.cpp.i"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/abing/detection/TrackerSource/utils.cpp > CMakeFiles/detection.dir/TrackerSource/utils.cpp.i
-
-CMakeFiles/detection.dir/TrackerSource/utils.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/detection.dir/TrackerSource/utils.cpp.s"
-	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/abing/detection/TrackerSource/utils.cpp -o CMakeFiles/detection.dir/TrackerSource/utils.cpp.s
-
 CMakeFiles/detection.dir/src/AngleSolver.cpp.o: CMakeFiles/detection.dir/flags.make
 CMakeFiles/detection.dir/src/AngleSolver.cpp.o: /Users/abing/detection/src/AngleSolver.cpp
 CMakeFiles/detection.dir/src/AngleSolver.cpp.o: CMakeFiles/detection.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/abing/detection/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/detection.dir/src/AngleSolver.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/abing/detection/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/detection.dir/src/AngleSolver.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/detection.dir/src/AngleSolver.cpp.o -MF CMakeFiles/detection.dir/src/AngleSolver.cpp.o.d -o CMakeFiles/detection.dir/src/AngleSolver.cpp.o -c /Users/abing/detection/src/AngleSolver.cpp
 
 CMakeFiles/detection.dir/src/AngleSolver.cpp.i: cmake_force
@@ -173,7 +103,7 @@ CMakeFiles/detection.dir/src/AngleSolver.cpp.s: cmake_force
 CMakeFiles/detection.dir/src/ArmorBox.cpp.o: CMakeFiles/detection.dir/flags.make
 CMakeFiles/detection.dir/src/ArmorBox.cpp.o: /Users/abing/detection/src/ArmorBox.cpp
 CMakeFiles/detection.dir/src/ArmorBox.cpp.o: CMakeFiles/detection.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/abing/detection/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/detection.dir/src/ArmorBox.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/abing/detection/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/detection.dir/src/ArmorBox.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/detection.dir/src/ArmorBox.cpp.o -MF CMakeFiles/detection.dir/src/ArmorBox.cpp.o.d -o CMakeFiles/detection.dir/src/ArmorBox.cpp.o -c /Users/abing/detection/src/ArmorBox.cpp
 
 CMakeFiles/detection.dir/src/ArmorBox.cpp.i: cmake_force
@@ -187,7 +117,7 @@ CMakeFiles/detection.dir/src/ArmorBox.cpp.s: cmake_force
 CMakeFiles/detection.dir/src/kalman_filter.cpp.o: CMakeFiles/detection.dir/flags.make
 CMakeFiles/detection.dir/src/kalman_filter.cpp.o: /Users/abing/detection/src/kalman_filter.cpp
 CMakeFiles/detection.dir/src/kalman_filter.cpp.o: CMakeFiles/detection.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/abing/detection/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/detection.dir/src/kalman_filter.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/abing/detection/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/detection.dir/src/kalman_filter.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/detection.dir/src/kalman_filter.cpp.o -MF CMakeFiles/detection.dir/src/kalman_filter.cpp.o.d -o CMakeFiles/detection.dir/src/kalman_filter.cpp.o -c /Users/abing/detection/src/kalman_filter.cpp
 
 CMakeFiles/detection.dir/src/kalman_filter.cpp.i: cmake_force
@@ -201,7 +131,7 @@ CMakeFiles/detection.dir/src/kalman_filter.cpp.s: cmake_force
 CMakeFiles/detection.dir/src/pnp.cpp.o: CMakeFiles/detection.dir/flags.make
 CMakeFiles/detection.dir/src/pnp.cpp.o: /Users/abing/detection/src/pnp.cpp
 CMakeFiles/detection.dir/src/pnp.cpp.o: CMakeFiles/detection.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/abing/detection/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/detection.dir/src/pnp.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/abing/detection/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/detection.dir/src/pnp.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/detection.dir/src/pnp.cpp.o -MF CMakeFiles/detection.dir/src/pnp.cpp.o.d -o CMakeFiles/detection.dir/src/pnp.cpp.o -c /Users/abing/detection/src/pnp.cpp
 
 CMakeFiles/detection.dir/src/pnp.cpp.i: cmake_force
@@ -215,7 +145,7 @@ CMakeFiles/detection.dir/src/pnp.cpp.s: cmake_force
 CMakeFiles/detection.dir/src/tracker.cpp.o: CMakeFiles/detection.dir/flags.make
 CMakeFiles/detection.dir/src/tracker.cpp.o: /Users/abing/detection/src/tracker.cpp
 CMakeFiles/detection.dir/src/tracker.cpp.o: CMakeFiles/detection.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/abing/detection/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/detection.dir/src/tracker.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/abing/detection/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/detection.dir/src/tracker.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/detection.dir/src/tracker.cpp.o -MF CMakeFiles/detection.dir/src/tracker.cpp.o.d -o CMakeFiles/detection.dir/src/tracker.cpp.o -c /Users/abing/detection/src/tracker.cpp
 
 CMakeFiles/detection.dir/src/tracker.cpp.i: cmake_force
@@ -229,7 +159,7 @@ CMakeFiles/detection.dir/src/tracker.cpp.s: cmake_force
 CMakeFiles/detection.dir/src/traditional_detector.cpp.o: CMakeFiles/detection.dir/flags.make
 CMakeFiles/detection.dir/src/traditional_detector.cpp.o: /Users/abing/detection/src/traditional_detector.cpp
 CMakeFiles/detection.dir/src/traditional_detector.cpp.o: CMakeFiles/detection.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/abing/detection/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/detection.dir/src/traditional_detector.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/abing/detection/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/detection.dir/src/traditional_detector.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/detection.dir/src/traditional_detector.cpp.o -MF CMakeFiles/detection.dir/src/traditional_detector.cpp.o.d -o CMakeFiles/detection.dir/src/traditional_detector.cpp.o -c /Users/abing/detection/src/traditional_detector.cpp
 
 CMakeFiles/detection.dir/src/traditional_detector.cpp.i: cmake_force
@@ -243,7 +173,7 @@ CMakeFiles/detection.dir/src/traditional_detector.cpp.s: cmake_force
 CMakeFiles/detection.dir/src/yolo_detection.cpp.o: CMakeFiles/detection.dir/flags.make
 CMakeFiles/detection.dir/src/yolo_detection.cpp.o: /Users/abing/detection/src/yolo_detection.cpp
 CMakeFiles/detection.dir/src/yolo_detection.cpp.o: CMakeFiles/detection.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/abing/detection/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/detection.dir/src/yolo_detection.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/abing/detection/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/detection.dir/src/yolo_detection.cpp.o"
 	/usr/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/detection.dir/src/yolo_detection.cpp.o -MF CMakeFiles/detection.dir/src/yolo_detection.cpp.o.d -o CMakeFiles/detection.dir/src/yolo_detection.cpp.o -c /Users/abing/detection/src/yolo_detection.cpp
 
 CMakeFiles/detection.dir/src/yolo_detection.cpp.i: cmake_force
@@ -257,11 +187,6 @@ CMakeFiles/detection.dir/src/yolo_detection.cpp.s: cmake_force
 # Object files for target detection
 detection_OBJECTS = \
 "CMakeFiles/detection.dir/main.cpp.o" \
-"CMakeFiles/detection.dir/TrackerSource/BYTETracker.cpp.o" \
-"CMakeFiles/detection.dir/TrackerSource/STrack.cpp.o" \
-"CMakeFiles/detection.dir/TrackerSource/kalmanFilter.cpp.o" \
-"CMakeFiles/detection.dir/TrackerSource/lapjv.cpp.o" \
-"CMakeFiles/detection.dir/TrackerSource/utils.cpp.o" \
 "CMakeFiles/detection.dir/src/AngleSolver.cpp.o" \
 "CMakeFiles/detection.dir/src/ArmorBox.cpp.o" \
 "CMakeFiles/detection.dir/src/kalman_filter.cpp.o" \
@@ -274,11 +199,6 @@ detection_OBJECTS = \
 detection_EXTERNAL_OBJECTS =
 
 detection: CMakeFiles/detection.dir/main.cpp.o
-detection: CMakeFiles/detection.dir/TrackerSource/BYTETracker.cpp.o
-detection: CMakeFiles/detection.dir/TrackerSource/STrack.cpp.o
-detection: CMakeFiles/detection.dir/TrackerSource/kalmanFilter.cpp.o
-detection: CMakeFiles/detection.dir/TrackerSource/lapjv.cpp.o
-detection: CMakeFiles/detection.dir/TrackerSource/utils.cpp.o
 detection: CMakeFiles/detection.dir/src/AngleSolver.cpp.o
 detection: CMakeFiles/detection.dir/src/ArmorBox.cpp.o
 detection: CMakeFiles/detection.dir/src/kalman_filter.cpp.o
@@ -345,7 +265,7 @@ detection: /opt/homebrew/lib/libopencv_photo.4.12.0.dylib
 detection: /opt/homebrew/lib/libopencv_imgproc.4.12.0.dylib
 detection: /opt/homebrew/lib/libopencv_core.4.12.0.dylib
 detection: CMakeFiles/detection.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/abing/detection/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable detection"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/abing/detection/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable detection"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/detection.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

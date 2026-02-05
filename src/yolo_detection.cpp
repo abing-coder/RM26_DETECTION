@@ -360,52 +360,9 @@ void DetectionArmor::infer()
 
         armorsDatas.push_back(d);
 
-        // // 创建对象用于跟踪器
-        // Object dog;
-        // dog.rect = cv::Rect_<float>(
-        //     boxes[indices[valid_index]].x,
-        //     boxes[indices[valid_index]].y,
-
-        //     boxes[indices[valid_index]].width,
-        //     boxes[indices[valid_index]].height
-        // );
-        // dog.label = num_class[indices[valid_index]];  //从类别里面取
-        // dog.prob = confidences[indices[valid_index]];
-        // detection_objects.push_back(dog);
-
         
     }
 
-    // tracks_objects = tracker.update(detection_objects);
-    detection_objects.clear();
-}
-
-void DetectionArmor::drawTracks(Mat& image)
-{
-    // 绘制跟踪轨迹
-    for (const auto& track : tracks_objects) {
-        if (track.is_activated) {  // 绘制已激活的轨迹
-            auto tlwh = track.tlwh;
-            Scalar color = tracker.get_color(track.track_id); // 获取跟踪ID对应的颜色
-            
-            // 绘制跟踪框
-            Point tl = Point(tlwh[0], tlwh[1]); // 左上角   1
-            Point br = Point(tlwh[0] + tlwh[2], tlwh[1] + tlwh[3]); // 右下角  3
-
-            Point center = Point(tlwh[0] + tlwh[2] / 2, tlwh[1] + tlwh[3] / 2);
-
-            circle(image, center, 5, Scalar(0,255,0), -1);
-
-            //rectangle(image, tl, br, color, 2);
-            //rectangle(image, tl, br,Scalar(0, 255, 0), 2);
-            
-            // 绘制跟踪ID
-            // putText(image, 
-            //     "Track " + to_string(track.track_id), 
-            //     Point(tlwh[0], tlwh[1] - 5), 
-            //     FONT_HERSHEY_SIMPLEX, 0.6, color, 2);
-        }
-    }
 }
 
 

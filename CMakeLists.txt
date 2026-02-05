@@ -17,7 +17,6 @@ include_directories(
 
 include_directories(./include)
 include_directories(./TimeCounter)
-include_directories(./TrackerHeader)
 include_directories(./Eigen)
 
 

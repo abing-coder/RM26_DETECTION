@@ -8,11 +8,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/abing/detection/TrackerSource/BYTETracker.cpp" "CMakeFiles/detection.dir/TrackerSource/BYTETracker.cpp.o" "gcc" "CMakeFiles/detection.dir/TrackerSource/BYTETracker.cpp.o.d"
-  "/Users/abing/detection/TrackerSource/STrack.cpp" "CMakeFiles/detection.dir/TrackerSource/STrack.cpp.o" "gcc" "CMakeFiles/detection.dir/TrackerSource/STrack.cpp.o.d"
-  "/Users/abing/detection/TrackerSource/kalmanFilter.cpp" "CMakeFiles/detection.dir/TrackerSource/kalmanFilter.cpp.o" "gcc" "CMakeFiles/detection.dir/TrackerSource/kalmanFilter.cpp.o.d"
-  "/Users/abing/detection/TrackerSource/lapjv.cpp" "CMakeFiles/detection.dir/TrackerSource/lapjv.cpp.o" "gcc" "CMakeFiles/detection.dir/TrackerSource/lapjv.cpp.o.d"
-  "/Users/abing/detection/TrackerSource/utils.cpp" "CMakeFiles/detection.dir/TrackerSource/utils.cpp.o" "gcc" "CMakeFiles/detection.dir/TrackerSource/utils.cpp.o.d"
   "/Users/abing/detection/main.cpp" "CMakeFiles/detection.dir/main.cpp.o" "gcc" "CMakeFiles/detection.dir/main.cpp.o.d"
   "/Users/abing/detection/src/AngleSolver.cpp" "CMakeFiles/detection.dir/src/AngleSolver.cpp.o" "gcc" "CMakeFiles/detection.dir/src/AngleSolver.cpp.o.d"
   "/Users/abing/detection/src/ArmorBox.cpp" "CMakeFiles/detection.dir/src/ArmorBox.cpp.o" "gcc" "CMakeFiles/detection.dir/src/ArmorBox.cpp.o.d"
