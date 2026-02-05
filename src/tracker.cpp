@@ -152,6 +152,15 @@ bool Tracker::run(Mat src, vector<ArmorBox> armors, int64 timestamp, int64 cvTic
         init();
     } else {
         dt = (timestamp - lastTimestamp) / 1000.0;
+        // 限制dt的范围，防止异常值导致预测不稳定
+        if (dt <= 0 || dt > 0.1) {
+            // 如果dt异常，使用一个合理的默认值（例如16ms，对应60fps）
+            dt = 0.016;
+        }
+        // 限制dt的最小值，避免除零错误
+        if (dt < 0.001) {
+            dt = 0.001;
+        }
         lostThres = static_cast<int>(lost_time_thres / dt);
         // 更新
         update();
@@ -486,11 +495,56 @@ void Tracker::update() {
 
 cv::Mat Tracker::show(float add_yaw, float add_pitch, int width) {
     if (state == TRACKING || state == TEMPLOST) {
+        // 绘制预测的装甲板中心点
         for (size_t i = 0; i < armorsNum + 1; i++) {
             Point2f armor_point = imu2img(pre_armors[i]);
-            circle(srcImg, armor_point, 2, Scalar(255, 255, 0), 15);
+            // circle(srcImg, armor_point, 2, Scalar(255, 255, 0), 15);
             if (armorsNum == BASE_1) break;
         }
+        
+        // 可视化四块装甲板四边形（与上面黄色中心点 pre_armors 一致，不依赖 distance）
+        if (armorsNum == NORMAL_4 && pre_armors.size() >= 5) {
+            float armor_width = 0.135f;
+            float armor_height = 0.055f;
+            double yaw = targetState(6);  // 当前 EKF yaw，与 run() 里算 pre_armors 一致
+            for (size_t i = 0; i < 4; i++) {
+                double armor_x = pre_armors[i + 1].x;
+                double armor_y = pre_armors[i + 1].y;
+                double armor_z = pre_armors[i + 1].z;
+                double armor_yaw = yaw + i * (2 * CV_PI / 4);  // 从圆心到该板的方向角
+                double perp_x = -sin(armor_yaw);
+                double perp_y = cos(armor_yaw);
+                std::vector<Point3f> armor_corners_local(4);
+                armor_corners_local[0] = Point3f(0, -armor_width/2, -armor_height/2);
+                armor_corners_local[1] = Point3f(0, armor_width/2, -armor_height/2);
+                armor_corners_local[2] = Point3f(0, armor_width/2, armor_height/2);
+                armor_corners_local[3] = Point3f(0, -armor_width/2, armor_height/2);
+                std::vector<Point2f> armor_corners_img(4);
+                for (size_t j = 0; j < 4; j++) {
+                    double local_y = armor_corners_local[j].y;
+                    double local_z = armor_corners_local[j].z;
+                    Point3f corner_3d;
+                    corner_3d.x = armor_x + local_y * perp_x;
+                    corner_3d.y = armor_y + local_y * perp_y;
+                    corner_3d.z = armor_z + local_z;
+                    armor_corners_img[j] = imu2img(corner_3d);
+                }
+                Scalar armor_color(0, 255, 255);
+                int thickness = 1;
+                for (size_t j = 0; j < 4; j++)
+                    //circle(srcImg, armor_corners_img[j], 3, armor_color, -1);
+                line(srcImg, armor_corners_img[0], armor_corners_img[1], armor_color, thickness);
+                line(srcImg, armor_corners_img[1], armor_corners_img[2], armor_color, thickness);
+                line(srcImg, armor_corners_img[2], armor_corners_img[3], armor_color, thickness);
+                line(srcImg, armor_corners_img[3], armor_corners_img[0], armor_color, thickness);
+                // line(srcImg, armor_corners_img[0], armor_corners_img[2], armor_color, 1);
+                // line(srcImg, armor_corners_img[1], armor_corners_img[3], armor_color, 1);
+                Point2f center_img = imu2img(Point3f(armor_x, armor_y, armor_z));
+                putText(srcImg, "P" + to_string(i), center_img + Point2f(-8, 4),
+                       FONT_HERSHEY_SIMPLEX, 0.5, armor_color, 1);
+            }
+        }
+        
         // 将角度转成像素坐标
         Point2f aim_point = solver.projectPoint(Point3f(tan(add_yaw), tan(add_pitch), 1));
         circle(srcImg, aim_point, 2, Scalar(255, 255, 255), 20);
